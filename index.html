@@ -1,0 +1,1565 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Index - GODFATHER</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+
+
+  <!-- Bootstrap CSS -->
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <!-- Main CSS File -->
+  <style>
+    /* Updated CSS */
+
+    body,
+    html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      font-family: 'Times New Roman', Times, serif;
+    padding-top: 0px;
+      align-content: center;
+    }
+
+    p {
+      font-size: medium;
+    }
+
+    .header {
+      text-align: center;
+      background: url('assets/img/background.jpg') no-repeat center center/cover;
+      color: #fff;
+      padding-top: 10px;
+      position: relative;
+    }
+
+    .header img {
+      max-width: 150px;
+      margin-bottom: 20px;
+    }
+
+    .header h1 {
+      font-size: 3rem;
+      font-weight: bold;
+      margin: 0;
+      color: black;
+    }
+
+    .header h2 {
+      font-size: 1.5rem;
+      font-weight: normal;
+      color: black;
+      margin-top: 10px;
+    }
+
+    .search-bar {
+      width: 100%;
+      max-width: 600px;
+      margin: 0 auto 10px auto;
+      position: relative;
+      /* Relative positioning for the container */
+    }
+
+    .search-bar input {
+      width: 100%;
+      padding: 10px 50px 10px 10px;
+      /* Add left padding for the icon */
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      outline: none;
+      box-sizing: border-box;
+    }
+
+    .search-bar button {
+      position: absolute;
+      right: 10px;
+      /* Position the button inside the search bar with space from the right edge */
+      top: 50%;
+      /* Vertically center the button */
+      transform: translateY(-50%);
+      /* Adjust vertical centering */
+      width: 30px;
+      /* Width of the button */
+      height: 30px;
+      /* Height of the button */
+      border: none;
+      background: none;
+      /* No background color */
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      /* Center icon vertically */
+      justify-content: center;
+      /* Center icon horizontally */
+      padding: 0;
+      /* Remove default padding */
+      box-sizing: border-box;
+    }
+
+    .search-bar button i {
+      font-size: 20px;
+      /* Adjust icon size as needed */
+      color: #000;
+      /* Icon color */
+    }
+
+    .item-cards-wrapper {
+      border: 1px solid #ddd;
+      background-color: #fff;
+      border-radius: 8px;
+      padding: 10px 0;
+      box-sizing: border-box;
+      margin-top: 20px;
+      width: 100%;
+      max-width: 600px;
+      /* Ensure same width as search bar */
+      margin: 0 auto;
+    }
+
+    .item-cards-section {
+      margin-bottom: 20px;
+    }
+
+    .item-cards-section h3 {
+      text-align: center;
+      color: black;
+      font-size: 1.5rem;
+      margin: 0;
+      padding: 10px;
+      background-color: #f4f4f4;
+    }
+
+    .item-cards {
+      display: flex;
+      overflow-x: auto;
+      padding: 10px;
+      white-space: nowrap;
+    }
+
+    .item-card {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      margin-right: 10px;
+      flex: 0 0 auto;
+      width: calc(25% - 20px);
+      text-align: center;
+      cursor: pointer;
+      /* Change cursor to pointer on hover */
+      margin: 10px;
+      /* Add some margin between cards */
+      transition: transform 0.3s;
+      /* Smooth scale transition */
+    }
+
+    .item-card img {
+      width: 60px;
+      height: 60px;
+      object-fit: cover;
+
+      padding: 5px;
+    }
+
+    .item-card .card-body {
+      padding: 10px;
+    }
+
+    .item-card .card-title {
+      font-size: 1.2rem;
+      margin: 0;
+    }
+
+    .item-card .card-text {
+      color: #666;
+    }
+
+    .item-card:hover {
+      transform: scale(1.05);
+      /* Slightly enlarge the card on hover */
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Custom scrollbar styles */
+    .item-cards::-webkit-scrollbar {
+      height: 8px;
+    }
+
+    .item-cards::-webkit-scrollbar-track {
+      background: #f4f4f4;
+    }
+
+    .item-cards::-webkit-scrollbar-thumb {
+      background: #888;
+      border-radius: 4px;
+    }
+
+    .item-cards::-webkit-scrollbar-thumb:hover {
+      background: #555;
+    }
+
+    /* Ensure subitem-list has the same width as the search bar */
+    .subitem-list {
+      width: 100%;
+      max-width: 600px;
+      /* Same as search bar */
+      margin: 0 auto;
+      /* Center align */
+      display: flex;
+      flex-direction: column;
+    }
+
+    .subitem-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      /* Space between cards */
+      box-sizing: border-box;
+      /* Ensure padding and border are included in width */
+    }
+
+    .subitem-row .item-card {
+      flex: 1 1 calc(40% - 15px);
+      /* Two items per row with gap */
+      max-width: calc(50% - 15px);
+      /* Ensure items fit within the row */
+      box-sizing: border-box;
+      /* Include padding and border in width */
+    }
+
+    .subitem-row img {
+      width: 100%;
+      /* Ensure images fit within their containers */
+      height: auto;
+      /* Maintain aspect ratio */
+    }
+
+
+
+    /* Style for Add to Cart Button */
+    .add-to-cart-btn {
+      margin-top: 10px;
+      padding: 5px 10px;
+      font-size: 1rem;
+    }
+
+    /* Modal Styles */
+    .modal-content {
+      max-width: 500px;
+      margin: auto;
+    }
+
+    .modal-body img {
+      max-width: 100%;
+    }
+
+    .custom-btn {
+      background-color: #49b200;
+      /* Your desired color */
+      color: white;
+      /* Button text color */
+      border-radius: 50px;
+    }
+
+    /* Centered Tab Navigation */
+    .nav-tabs {
+      display: flex;
+      justify-content: space-between;
+      /* Distribute space evenly */
+      max-width: 600px;
+      /* Max width for the tabs container */
+      margin: 0 auto;
+      /* Center align the tabs container horizontally */
+      border-radius: 10px;
+      /* Rounded corners for the tab container */
+      padding: 0;
+      /* Remove default padding */
+      height: 40px;
+      /* Height of the tab container */
+      background-color: #49b200;
+      /* Background color for tabs */
+      border: 1px solid #49b200;
+      /* Overall border for the container */
+      box-shadow: 0 0 0 1px #49b200;
+      /* Ensure border color matches background */
+      overflow: hidden;
+      /* Hide overflow to prevent issues with visible tabs */
+      position: relative;
+      /* Ensure correct stacking context for child elements */
+    }
+
+    /* Border on all sides of each tab item */
+    .nav-tabs .nav-item {
+      flex: 1;
+      /* Each nav-item takes equal space */
+      display: flex;
+      /* Ensure each nav-item is a flex container */
+      align-items: center;
+      /* Center vertically within the nav-item */
+      justify-content: center;
+      /* Center horizontally within the nav-item */
+      background-color: #49b200;
+      /* Background color for tabs */
+      border-radius: 0;
+      /* Remove rounded corners for individual tabs */
+      border-right: 1px solid white;
+      /* Add right border to separate tabs */
+      box-sizing: border-box;
+      /* Include padding and border in width */
+      position: relative;
+      /* Ensure correct stacking context for child elements */
+      z-index: 1;
+      /* Ensure nav-item is above other content */
+    }
+
+    .nav-tabs .nav-item:last-child {
+      border-right: none;
+      /* Remove the right border for the last tab */
+    }
+
+    /* Style for the links within the tabs */
+    .nav-tabs .nav-link {
+      display: flex;
+      /* Use Flexbox for layout */
+      align-items: center;
+      /* Center content vertically */
+      justify-content: center;
+      /* Center content horizontally */
+      text-align: center;
+      /* Center text */
+      text-decoration: none;
+      /* Remove underline from links */
+      color: white;
+      /* Text color */
+      font-size: 1.2rem;
+      /* Font size */
+      font-weight: bold;
+      /* Font weight */
+      background-color: #49b200;
+      /* Background color for each tab */
+      width: 100%;
+      /* Ensure the link takes full width of the nav-item */
+      margin: 0;
+      /* Remove default margin */
+      padding: 0.5rem 0;
+      /* Equal padding above and below text */
+      transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+      /* Smooth transition for hover effect */
+      box-sizing: border-box;
+      /* Include padding and border in width */
+    }
+
+    /* Hover and Active States for all tabs */
+    .nav-tabs .nav-link:hover,
+    .nav-tabs .nav-link.active {
+      background-color: white !important;
+      /* Change background color on hover or active */
+      color: black !important;
+      /* Ensure text color is readable */
+      border-color: #49b200 !important;
+      /* Border color on hover or active */
+    }
+
+    /* Specific Hover and Active States for the First Tab */
+    .nav-tabs .nav-item:first-child .nav-link:hover,
+    .nav-tabs .nav-item:first-child .nav-link.active {
+      background-color: white !important;
+      /* White background for the first tab on hover or active */
+      color: black !important;
+      /* Ensure text color is readable */
+      border-color: #49b200 !important;
+      /* Border color on hover or active */
+    }
+
+
+    .add-to-cart-btn {
+      background-color: #49b200;
+      /* A vibrant color for the button */
+      color: white;
+      /* White text color */
+      border: none;
+      /* Remove default border */
+      padding: 5px 5px;
+      /* Add padding */
+      font-size: 14px;
+      /* Increase font size */
+      border-radius: 30px;
+      /* Rounded corners */
+      cursor: pointer;
+      /* Pointer cursor on hover */
+      transition: background-color 0.3s, transform 0.2s;
+      /* Smooth transitions */
+      width: 100px;
+      margin-top: 10px;
+      align-self: center;
+      text-align: center;
+    }
+
+    .add-to-cart-btn:hover {
+      background-color: #49b200;
+      /* Slightly darker color on hover */
+      transform: scale(1.05);
+      /* Slightly enlarge button on hover */
+    }
+
+    .add-to-cart-btn:active {
+      background-color: #49b200;
+      /* Even darker color when pressed */
+      transform: scale(0.98);
+      /* Slightly shrink button on click */
+    }
+
+    .navbar-nav .nav-item.active .nav-link {
+      color: #49b200 !important;
+      /* Green color for the active link */
+    }
+
+    .navbar-nav .nav-item .nav-link {
+      color: black;
+      /* Default color for other links */
+      font-weight: bold;
+    }
+
+    .navbar-nav .nav-item .nav-link:hover {
+      color: #49b200 !important;
+      /* Green color on hover */
+      text-decoration: underline;
+    }
+
+    footer {
+      background-color: #f8f9fa;
+      padding: 20px 0;
+      position: relative;
+      bottom: 0;
+      width: 100%;
+    }
+
+    .social-links {
+      list-style: none;
+      padding: 0;
+    }
+
+    .social-links li {
+      display: inline;
+      margin: 0 10px;
+    }
+
+    .social-links a {
+      color: #333;
+      text-decoration: none;
+      font-size: 24px;
+    }
+
+    .social-links a:hover {
+      color: #49b200;
+      /* Change this to your desired hover color */
+    }
+
+    footer p {
+      margin: 10px 0 0;
+    }
+
+
+
+
+    /* Cart Icon Positioning */
+    .cart-icon-fixed {
+      position: fixed;
+      right: 10px;
+      /* Adjust the right distance from the page edge as needed */
+      top: 50%;
+      /* Vertically center the icon */
+      transform: translateY(-50%);
+      /* Center the icon vertically */
+      z-index: 9999;
+      /* Ensure the icon is above other content */
+      background-color: #fff;
+      /* Background color for better visibility */
+      border-radius: 50%;
+      padding: 10px;
+      /* Add padding to the icon */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      /* Optional shadow for the icon */
+    }
+
+    /* Optional: Styling for the cart icon */
+    .cart-icon-fixed i {
+      font-size: 24px;
+      /* Size of the icon */
+      color: #49b200;
+      /* Icon color */
+    }
+
+    .cart-icon-fixed .badge {
+      position: absolute;
+      top: -10px;
+      right: -10px;
+      background-color: red;
+      color: white;
+      font-size: 12px;
+      border-radius: 50%;
+      padding: 2px 6px;
+    }
+  </style>
+</head>
+<a href="cart.html" class="cart-icon-fixed" title="View Cart">
+  <i class="fas fa-shopping-cart"></i>
+  <span id="cart-count" class="badge">0</span> <!-- Cart count badge -->
+</a>
+
+<header id="header" class="header">
+  <img src="images/logo.jpg" alt="Logo">
+  <h1>GODFATHER</h1>
+  <h2>WEDDING EVENT & CATERS<br> Estd: 2011</h2>
+
+  <!-- Search Bar -->
+  <div class="search-bar">
+    <input type="text" placeholder="What are you looking for ?">
+    <button type="button"><i class="fas fa-search"></i></button>
+  </div>
+</header>
+<!-- Centered Tab Navigation -->
+
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <ul class="nav nav-tabs" id="cateringTabs" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active" id="catering-tab" data-bs-toggle="tab" data-bs-target="#catering-content"
+            type="button" role="tab" aria-controls="catering-content" aria-selected="true">Catering</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <a class="nav-link" href="sadya.html" role="tab" aria-controls="sadhya-content" aria-selected="false">
+            Sadhya
+          </a>
+        </li>
+
+        <li class="nav-item" role="presentation">
+          <a class="nav-link" href="packages.html" role="tab" aria-controls="package-content" aria-selected="false">
+            Packages
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div><br><br>
+
+<!-- Tab Content -->
+<div class="tab-content" id="cateringTabs">
+  <div class="tab-pane fade show active" id="catering-content" role="tabpanel" aria-labelledby="catering-tab">
+    <div class="container">
+      <div class="item-cards-wrapper item-cards-section">
+        <div class="item-cards">
+          <!-- Category Cards -->
+          <div class="item-card" onclick="showCategory('welcome-drinks')">
+            <img src="images/welcome drink.webp" alt="WELCOME DRINKS">
+            <div class="card-body">
+              <p><span>WELCOME<br> DRINKS</span></p>
+            </div>
+          </div>
+          <div class="item-card" onclick="showCategory('mocktails')">
+            <img src="images/mocktail.webp" alt="MOCKTAILS">
+            <div class="card-body">
+              <p><span>MOCKTAILS</span></p>
+            </div>
+          </div>
+          <div class="item-card" onclick="showCategory('malabar-snacks')">
+            <img src="images/malabar snacks.webp" alt="MALABAR SNACKS">
+            <div class="card-body">
+              <p><span>MALABAR<br> SNACKS</span></p>
+            </div>
+          </div>
+          <div class="item-card" onclick="showCategory('starters')">
+            <img src="images/starters.webp" alt="STARTERS">
+            <div class="card-body">
+              <p><span>STARTERS</span></p>
+            </div>
+          </div>
+          <div class="item-card" onclick="showCategory('salads')">
+            <img src="images/salads.webp" alt="SALADS">
+            <div class="card-body">
+              <p><span>SALADS</span></p>
+            </div>
+          </div>
+          <div class="item-card" onclick="showCategory('soup')">
+            <img src="images/soup.webp" alt="SOUP">
+            <div class="card-body">
+              <p><span>SOUP</span></p>
+            </div>
+          </div>
+          <div class="item-card" onclick="showCategory('breads')">
+            <img src="images/breads.webp" alt="BREADS">
+            <div class="card-body">
+              <p><span>BREADS</span></p>
+            </div>
+          </div>
+          <div class="item-card" onclick="showCategory('rice-varities')">
+            <img src="images/rice varities.webp" alt="RICE VARIETIES">
+            <div class="card-body">
+              <p><span>RICE<br> VARIETIES</span></p>
+            </div>
+          </div>
+          <div class="item-card" onclick="showCategory('dum-biriyani')">
+            <img src="images/dum biriyani.webp" alt="DUM BIRIYANI">
+            <div class="card-body">
+              <p><span>DUM BIRIYANI</span></p>
+            </div>
+          </div>
+          <div class="item-card" onclick="showCategory('mandhi')">
+            <img src="images/mandhi.webp" alt="MANDHI">
+            <div class="card-body">
+              <p><span>MANDHI</span></p>
+            </div>
+          </div>
+          <div class="item-card" onclick="showCategory('mutton-dishes')">
+            <img src="images/mutton dishes.webp" alt="MUTTON DISHES">
+            <div class="card-body">
+              <p><span>MUTTON <br>DISHES</span></p>
+            </div>
+          </div>
+          <div class="item-card" onclick="showCategory('beef-dishes')">
+            <img src="images/beef dishes.webp" alt="BEEF DISHES">
+            <div class="card-body">
+              <p><span>BEEF DISHES</span></p>
+            </div>
+          </div>
+          <div class="item-card" onclick="showCategory('chicken-dishes')">
+            <img src="images/chicken dishes.webp" alt="CHICKEN DISHES">
+            <div class="card-body">
+              <p><span>CHICKEN <br>DISHES</span></p>
+            </div>
+          </div>
+          <div class="item-card" onclick="showCategory('duck-dishes')">
+            <img src="images/duck dishes.webp" alt="DUCK DISHES">
+            <div class="card-body">
+              <p><span>DUCK DISHES</span></p>
+            </div>
+          </div>
+          <div class="item-card" onclick="showCategory('pork-dishes')">
+            <img src="images/pork dishes.webp" alt="PORK DISHES">
+            <div class="card-body">
+              <p><span>PORK DISHES</span></p>
+            </div>
+          </div>
+          <div class="item-card" onclick="showCategory('fish-dishes')">
+            <img src="images/fish.webp" alt="FISH DISHES">
+            <div class="card-body">
+              <p><span>FISH DISHES</span></p>
+            </div>
+          </div>
+          <div class="item-card" onclick="showCategory('prawns-dishes')">
+            <img src="images/prawns dishes.webp" alt="PRAWNS DISHES">
+            <div class="card-body">
+              <p><span>PRAWNS<br> DISHES</span></p>
+            </div>
+          </div>
+          <div class="item-card" onclick="showCategory('veg-dishes')">
+            <img src="images/veg dishes.webp" alt="VEG DISHES">
+            <div class="card-body">
+              <p><span>VEG DISHES</span></p>
+            </div>
+          </div>
+          <div class="item-card" onclick="showCategory('arabian-dishes')">
+            <img src="images/arabian dishes.webp" alt="ARABIAN DISHES">
+            <div class="card-body">
+              <p><span>ARABIAN DISHES</span></p>
+            </div>
+          </div>
+          <div class="item-card" onclick="showCategory('tandoor-counter')">
+            <img src="images/tandoor.webp" alt="TANDOOR COUNTER">
+            <div class="card-body">
+              <p><span>TANDOOR<br> COUNTER</span></p>
+            </div>
+          </div>
+          <div class="item-card" onclick="showCategory('evening-snacks')">
+            <img src="images/evening snacks.webp" alt="EVENING SNACKS">
+            <div class="card-body">
+              <p><span>EVENING<br> SNACKS</span></p>
+            </div>
+          </div>
+          <div class="item-card" onclick="showCategory('special-thattukada')">
+            <img src="images/special thattukada.webp" alt="SPECIAL THATTUKADA">
+            <div class="card-body">
+              <p><span>SPECIAL <br>THATTUKADA</span></p>
+            </div>
+          </div>
+          <div class="item-card" onclick="showCategory('sweets-fruits')">
+            <img src="images/sweets and fruits.webp" alt="SWEETS & FRUITS">
+            <div class="card-body">
+              <p><span>SWEETS &<br> FRUITS</span></p>
+            </div>
+          </div>
+          <div class="item-card" onclick="showCategory('desserts')">
+            <img src="images/desserts.webp" alt="DESSERTS">
+            <div class="card-body">
+              <p><span>DESSERTS</span></p>
+            </div>
+          </div>
+          <div class="item-card" onclick="showCategory('kids')">
+            <img src="images/kids.webp" alt="KIDS">
+            <div class="card-body">
+              <p><span>KIDS</span></p>
+            </div>
+          </div>
+
+          <div class="item-card" onclick="showCategory('hot-beverages')">
+            <img src="images/hot beverages.webp" alt="HOT BEVERAGES">
+            <div class="card-body">
+              <p><span>HOT<br> BEVERAGES</span></p>
+            </div>
+          </div>
+          <div class="item-card" onclick="showCategory('herbal-tea')">
+            <img src="images/herbal tea.webp" alt="HERBAL TEA">
+            <div class="card-body">
+              <p><span>HERBAL TEA</span></p>
+            </div>
+          </div>
+          <div class="item-card" onclick="showCategory('dosa-counter')">
+            <img src="images/dosa verities.webp" alt="DOSA COUNTER">
+            <div class="card-body">
+              <p><span>DOSA <br>COUNTER</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- Detail Sections (Hidden by default) -->
+  <div id="welcome-drinks" class="subitem-list" style="display: none;">
+    <h4><b>WELCOME DRINKS</b></h4><br>
+    <div class="subitem-row">
+      <div class="item-card">
+        <img src="images/cart/Tender Coconut Punch.webp" alt="Welcome Drink Detail 1">
+        <div class="card-body">
+          <p><span>Tender Coconut Punch</span></p>
+          <button class="add-to-cart-btn" data-id="1" data-name="Tender Coconut Punch">Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="item-card">
+        <img src="images/cart/Strawberry Velvette.webp" alt="Welcome Drink Detail 1">
+        <div class="card-body">
+          <p><span>Strawberry Velvette</span></p>
+          <button class="add-to-cart-btn" data-id="2" data-name="Strawberry Velvette">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!--mocktails-->
+
+  <div id="mocktails" class="subitem-list" style="display: none;">
+    <h4><b>MOCKTAILS</b></h4><br>
+    <div class="subitem-row">
+
+      <div class="item-card">
+        <img src="images/cart/Banana Bonkers.webp" alt="Pork Masala">
+        <div class="card-body">
+          <p><span>Banana Bonkers</span></p>
+          <button class="add-to-cart-btn" data-id="1" data-name="Banana Bonkers">Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="item-card">
+        <img src="images/cart/Mojito.webp" alt="Pork Masala">
+        <div class="card-body">
+          <p><span>Mojito</span></p>
+          <button class="add-to-cart-btn" data-id="2" data-name="Mojito">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div id="malabar-snacks" class="subitem-list" style="display: none;">
+    <h4><b>MALABAR SNACKS</b></h4><br>
+    <div class="subitem-row">
+      <div class="item-card">
+        <img src="images/cart/Unnakkai.webp" alt="Some Snack">
+        <div class="card-body">
+          <p><span>Unnakkai</span></p>
+          <button class="add-to-cart-btn" data-id="1" data-name="Unnakkai">Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="item-card">
+        <img src="images/cart/Kai Pola.webp" alt="Some Snack">
+        <div class="card-body">
+          <p><span>Kai Pola</span></p>
+          <button class="add-to-cart-btn" data-id="2" data-name="Kai Pola">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--starters-->
+  <div id="starters" class="subitem-list" style="display: none;">
+    <h4><b>STARTERS</b></h4><br>
+    <div class="subitem-row">
+
+      <div class="item-card">
+        <img src="images/cart/Spring Roll.webp" alt="Some Snack">
+        <div class="card-body">
+          <p><span>Spring Roll</span></p>
+          <button class="add-to-cart-btn" data-id="1" data-name="Spring Roll">Add to Cart</button>
+
+        </div>
+      </div>
+
+      <div class="item-card">
+        <img src="images/cart/Singapore Fried Rice.webp" alt="Some Snack">
+        <div class="card-body">
+          <p><span>Singapore Fried Rice</span></p>
+          <button class="add-to-cart-btn" data-id="2" data-name="Singapore Fried Rice">Add to Cart</button>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--salads-->
+
+  <div id="salads" class="subitem-list" style="display: none;">
+    <h4><b>SALADS</b></h4><br>
+    <div class="subitem-row">
+
+      <div class="item-card">
+        <img src="images/cart/Green Salad.webp" alt="Some Snack">
+        <div class="card-body">
+          <p><span>Green Salad</span></p>
+          <button class="add-to-cart-btn" data-id="1" data-name="Green Salad">Add to Cart</button>
+        </div>
+      </div>
+      <div class="item-card">
+        <img src="images/cart/uppilittath.webp" alt="Some Snack">
+        <div class="card-body">
+          <p><span>Uppilittath</span></p>
+          <button class="add-to-cart-btn" data-id="2" data-name="Uppilittath">Add to Cart</button>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!--soup-->
+
+  <div id="soup" class="subitem-list" style="display: none;">
+    <h4><b>SOUP</b></h4><br>
+    <div class="subitem-row">
+
+      <div class="item-card">
+        <img src="images/cart/Sweet Corn Chicken Soup.webp" alt="Some Snack">
+        <div class="card-body">
+          <p><span>Sweet Corn Chicken Soup</span></p>
+          <button class="add-to-cart-btn" data-id="1" data-name="Sweet Corn Chicken Soup">Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="item-card">
+        <img src="images/cart/Veg Clear Soup.webp" alt="Some Snack">
+        <div class="card-body">
+          <p><span>Veg Clear Soup</span></p>
+          <button class="add-to-cart-btn" data-id="2" data-name="Veg Clear Soup">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--breads-->
+  <div id="breads" class="subitem-list" style="display: none;">
+    <h4><b>BREADS</b></h4><br>
+    <div class="subitem-row">
+
+      <div class="item-card">
+        <img src="images/cart/Romali Roti.webp" alt="Some Snack">
+        <div class="card-body">
+          <p><span>Romali Roti</span></p>
+          <button class="add-to-cart-btn" data-id="1" data-name="Romali Roti">Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="item-card">
+        <img src="images/cart/Nice Pathiri.webp" alt="Some Snack">
+        <div class="card-body">
+          <p><span>Nice Pathiri</span></p>
+          <button class="add-to-cart-btn" data-id="2" data-name="Nice Pathiri">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!--rice varities-->
+  <div id="rice-varities" class="subitem-list" style="display: none;">
+    <h4><b>RICE VARITIES</b></h4><br>
+    <div class="subitem-row">
+
+      <div class="item-card">
+        <img src="imageS/cart/Veg Fried Rice.webp" alt="Some Snack">
+        <div class="card-body">
+          <p><span>Veg Fried Rice</span></p>
+          <button class="add-to-cart-btn" data-id="1" data-name="Veg Fried Rice">Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="item-card">
+        <img src="images/cart/Egg Fried Rice.webp" alt="Some Snack">
+        <div class="card-body">
+          <p><span>Egg</span> Fried Rice</span></p>
+          <button class="add-to-cart-btn" data-id="2" data-name="Egg Fried Rice">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!--dum biriyani-->
+  <div id="dum-biriyani" class="subitem-list" style="display: none;">
+    <h4><b>DUM BIRIYANI</b></h4><br>
+    <div class="subitem-row">
+
+      <div class="item-card">
+        <img src="images/cart/Mutton Dum Biriyani.webp" alt="Some Snack">
+        <div class="card-body">
+          <p><span>Mutton Dum Biriyani</span></p>
+          <button class="add-to-cart-btn" data-id="1" data-name="Mutton Dum Biriyani">Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="item-card">
+        <img src="images/cart/Chicken Dum Biriyani.webp" alt="Some Snack">
+        <div class="card-body">
+          <p><span>Chicken Dum Biriyani</span></p>
+          <button class="add-to-cart-btn" data-id="2" data-name="Chiken Dum Biriyani">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--mutton dishes-->
+  <div id="mutton-dishes" class="subitem-list" style="display: none;">
+    <h4><b>MUTTON DISHES</b></h4><br>
+    <div class="subitem-row">
+      <div class="item-card">
+        <img src="images/cart/Mutton Curry.webp" alt="Some Snack">
+        <div class="card-body">
+          <p><span>Mutton Curry</span></p>
+          <button class="add-to-cart-btn" data-id="1" data-name="Mutton Curry">Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="item-card">
+        <img src="images/cart/Mutton Shahi Korma.webp" alt="Some Snack">
+        <div class="card-body">
+          <p><span>Mutton Shahi Korma</span></p>
+          <button class="add-to-cart-btn" data-id="2" data-name="Mutton Shahi Korma">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--mandhi-->
+  <div id="mandhi" class="subitem-list" style="display: none;">
+    <h4><b>MANDHI</b></h4><br>
+    <div class="subitem-row">
+
+      <div class="item-card">
+        <img src="images/cart/Chicken Mandhi.webp" alt="Some Snack">
+        <div class="card-body">
+          <p><span>Chicken Mandhi</span></p>
+          <button class="add-to-cart-btn" data-id="1" data-name="Chicken Mandhi">Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="item-card">
+        <img src="images/cart/Beef Mandhi.webp" alt="Some Snack">
+        <div class="card-body">
+          <p><span>Beef Mandhi</span></p>
+          <button class="add-to-cart-btn" data-id="2" data-name="Beef Mandhi">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--beef dishes-->
+  <div id="beef-dishes" class="subitem-list" style="display: none;">
+    <h4><b>BEEF DISHES</b></h4><br>
+    <div class="subitem-row">
+      <div class="item-card">
+        <img src="images/cart/Beef Fry.webp" alt="Some Snack">
+        <div class="card-body">
+          <p><span>Beef Fry</span></p>
+          <button class="add-to-cart-btn" data-id="1" data-name="Beef Fry">Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="item-card">
+        <img src="images/cart/Beef Poriyal.webp" alt="Some Snack">
+        <div class="card-body">
+          <p><span>Beef Poriyal</span></p>
+          <button class="add-to-cart-btn" data-id="2" data-name="Beef Poriyal">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!--chicken dishes-->
+  <div id="chicken-dishes" class="subitem-list" style="display: none;">
+    <h4><b>CHICKEN DISHES</b></h4><br>
+    <div class="subitem-row">
+      <div class="item-card">
+        <img src="imageS/cart/Chicken Roast.webp" alt="Some Snack">
+        <div class="card-body">
+          <p><span>Chicken Roast</span></p>
+          <button class="add-to-cart-btn" data-id="1" data-name="Chicken Roast">Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="item-card">
+        <img src="images/cart/Chettinadu Chicken.webp" alt="Some Snack">
+        <div class="card-body">
+          <p><span>Chettinadu Chicken</span></p>
+          <button class="add-to-cart-btn" data-id="2" data-name="Chettinadu Chicken">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!--duck dishes-->
+  <div id="duck-dishes" class="subitem-list" style="display: none;">
+    <h4><b>DUCK DISHES</b></h4><br>
+    <div class="subitem-row">
+      <div class="item-card">
+        <img src="images/cart/Kuttanadan Duck Roast.webp" alt="Some Snack">
+        <div class="card-body">
+          <p><span>Kuttanadan Duck Roast</span></p>
+          <button class="add-to-cart-btn" data-id="1" data-name="Kuttanadan Duck Roast">Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="item-card">
+        <img src="images/cart/Duck Stew.webp" alt="Some Snack">
+        <div class="card-body">
+          <p><span> Duck Stew </span></p>
+          <button class="add-to-cart-btn" data-id="2" data-name="Duck Stew">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--pork dishes-->
+
+  <div id="pork-dishes" class="subitem-list" style="display: none;">
+    <h4><b>PORK DISHES</b></h4><br>
+    <div class="subitem-row">
+
+      <div class="item-card">
+        <img src="images/cart/Pork Masala.webp" alt="Pork Masala">
+        <div class="card-body">
+          <p><span>Pork Masala</span></p>
+          <button class="add-to-cart-btn" data-id="1" data-name="Pork Masala">Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="item-card">
+        <img src="images/cart/Pork Dry Fry.webp" alt="Pork Dry Fry">
+        <div class="card-body">
+          <p><span>Pork Dry Fry</span></p>
+          <button class="add-to-cart-btn" data-id="2" data-name="Pork Dry Fry">Add to Cart</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!--fish dishes-->
+
+  <div id="fish-dishes" class="subitem-list" style="display: none;">
+    <h4><b>FISH DISHES</b></h4><br>
+    <div class="subitem-row">
+
+      <div class="item-card">
+        <img src="images/cart/Fish Vattichathu.webp" alt="Pork Masala">
+        <div class="card-body">
+          <p><span>Fish Vattichathu</span></p>
+          <button class="add-to-cart-btn" data-id="1" data-name="Fish Vattichathu">Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="item-card">
+        <img src="images/cart/Fish Curry.webp" alt="Pork Masala">
+        <div class="card-body">
+          <p><span>Fish Curry</span></p>
+          <button class="add-to-cart-btn" data-id="2" data-name="Fish Curry">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!--prawns dishes-->
+
+  <div id="prawns-dishes" class="subitem-list" style="display: none;">
+    <h4><b>PRAWNS DISHES</b></h4><br>
+    <div class="subitem-row">
+
+      <div class="item-card">
+        <img src="imageS/cart/Prawns Masala.webp" alt="Pork Masala">
+        <div class="card-body">
+          <p><span>Prawns Masala</span></p>
+          <button class="add-to-cart-btn" data-id="1" data-name="Prawns Masala">Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="item-card">
+        <img src="imageS/cart/Prawns Roast.webp" alt="Pork Masala">
+        <div class="card-body">
+          <p><span>Prawns Roast</span></p>
+          <button class="add-to-cart-btn" data-id="2" data-name="Prawns Roast">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--veg dishes-->
+
+  <div id="veg-dishes" class="subitem-list" style="display: none;">
+    <h4><b>VEG DISHES</b></h4><br>
+    <div class="subitem-row">
+
+      <div class="item-card">
+        <img src="images/cart/Veg Khorma.webp" alt="Pork Masala">
+        <div class="card-body">
+          <p><span>Veg Khorma</span></p>
+          <button class="add-to-cart-btn" data-id="1" data-name="Veg Khorma">Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="item-card">
+        <img src="imageS/cart/Veg Stew.webp" alt="Pork Masala">
+        <div class="card-body">
+          <p><span>Veg Stew</span></p>
+          <button class="add-to-cart-btn" data-id="2" data-name="Veg Stew">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!--arabian dishes-->
+
+  <div id="arabian-dishes" class="subitem-list" style="display: none;">
+    <h4><b>ARABIAN</b> DISHES</b></h4><br>
+    <div class="subitem-row">
+
+      <div class="item-card">
+        <img src="images/cart/Sheek Kebab.webp" alt="Pork Masala">
+        <div class="card-body">
+          <p><span>Sheek Kebab</span></p>
+          <button class="add-to-cart-btn" data-id="1" data-name="Sheek Kebab">Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="item-card">
+        <img src="images/cart/Mini Shawarma.webp" alt="Pork Masala">
+        <div class="card-body">
+          <p><span>Mini Shawarma</span></p>
+          <button class="add-to-cart-btn" data-id="2" data-name="Mini Shawarma">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--tandoor counter-->
+
+  <div id="tandoor-counter" class="subitem-list" style="display: none;">
+    <h4><b>TANDOOR COUNTER</b></h4><br>
+    <div class="subitem-row">
+
+      <div class="item-card">
+        <img src="images/cart/Tandoor Lamb.webp" alt="Pork Masala">
+        <div class="card-body">
+          <p><span>Tandoor Lamb</span></p>
+          <button class="add-to-cart-btn" data-id="1" data-name="Tandoor Lamb">Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="item-card">
+        <img src="imageS/cart/Chicken Tikka.webp" alt="Pork Masala">
+        <div class="card-body">
+          <p><span>Chicken Tikka</span></p>
+          <button class="add-to-cart-btn" data-id="2" data-name="Chicken Tikka">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--evening snacks-->
+
+  <div id="evening-snacks" class="subitem-list" style="display: none;">
+    <h4><b>EVENING SNACKS</b></h4><br>
+    <div class="subitem-row">
+
+      <div class="item-card">
+        <img src="images/cart/Battoora  &  Chena Masala.webp" alt="Pork Masala">
+        <div class="card-body">
+          <p><span>Battoora & Chena Masala</span></p>
+          <button class="add-to-cart-btn" data-id="1" data-name="Battoora  &  Chena Masala">Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="item-card">
+        <img src="images/cart/Parotta.webp" alt="Pork Masala">
+        <div class="card-body">
+          <p><span>Porotta</span></p>
+          <button class="add-to-cart-btn" data-id="2" data-name="Parotta">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--special thattukada-->
+
+  <div id="special-thattukada" class="subitem-list" style="display: none;">
+    <h4><b>SPECIAL THATTUKADA</b></h4><br>
+    <div class="subitem-row">
+
+      <div class="item-card">
+        <img src="images/cart/Kappa.webp" alt="Pork Masala">
+        <div class="card-body">
+          <p><span>Kappa</span></p>
+          <button class="add-to-cart-btn" data-id="1" data-name="Kappa">Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="item-card">
+        <img src="images/cart/Fish Curry.webp" alt="Pork Masala">
+        <div class="card-body">
+          <p><span>Fish Curry</span></p>
+          <button class="add-to-cart-btn" data-id="2" data-name="Fish Curry">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--sweets & fruits-->
+
+  <div id="sweets-fruits" class="subitem-list" style="display: none;">
+    <h4><b>SWEETS & FRUITS</b></h4><br>
+    <div class="subitem-row">
+
+      <div class="item-card">
+        <img src="images/cart/Variety Pedas.webp" alt="Pork Masala">
+        <div class="card-body">
+          <p><span>Varety Pedas</span></p>
+          <button class="add-to-cart-btn" data-id="1" data-name="Variety Pedas">Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="item-card">
+        <img src="images/cart/Burfees.webp" alt="Pork Masala">
+        <div class="card-body">
+          <p><span>Burfees</span></p>
+          <button class="add-to-cart-btn" data-id="2" data-name="Burfees">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--desserts-->
+
+  <div id="desserts" class="subitem-list" style="display: none;">
+    <h4><b>DESSERTS</b></h4><br>
+    <div class="subitem-row">
+
+      <div class="item-card">
+        <img src="images/cart/Ice Cream (Varieties).webp" alt="Pork Masala">
+        <div class="card-body">
+          <p><span>Ice Cream (Varieties)</span></p>
+          <button class="add-to-cart-btn" data-id="1" data-name="Ice Cream (Varieties)">Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="item-card">
+        <img src="images/cart/Carrot Halwa.webp" alt="Pork Masala">
+        <div class="card-body">
+          <p><span>Carrot Halwa</span></p>
+          <button class="add-to-cart-btn" data-id="2" data-name="Carrot Halwa">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--kids-->
+
+  <div id="kids" class="subitem-list" style="display: none;">
+    <h4><b>KIDS</b></h4><br>
+    <div class="subitem-row">
+
+      <div class="item-card">
+        <img src="images/cart/Popcorn.webp" alt="Pork Masala">
+        <div class="card-body">
+          <p><span>Popcorn</span></p>
+          <button class="add-to-cart-btn" data-id="1" data-name="Popcorn">Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="item-card">
+        <img src="images/cart/Choclate Fountain.webp" alt="Pork Masala">
+        <div class="card-body">
+          <p><span>Chocolate Fountain</span></p>
+          <button class="add-to-cart-btn" data-id="2" data-name="Choclate Fountain">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--HOT BEVERAGES-->
+
+  <div id="hot-beverages" class="subitem-list" style="display: none;">
+    <h4><b>HOT BEVERAGES</b></h4><br>
+    <div class="subitem-row">
+
+      <div class="item-card">
+        <img src="images/cart/Milk Tea.webp" alt="Pork Masala">
+        <div class="card-body">
+          <p><span>Milk Tea</span></p>
+          <button class="add-to-cart-btn" data-id="1" data-name="Milk Tea">Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="item-card">
+        <img src="images/cart/Coffee.webp" alt="Pork Masala">
+        <div class="card-body">
+          <p><span>Coffee</span></p>
+          <button class="add-to-cart-btn" data-id="2" data-name="Coffee">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--herbal tea-->
+
+  <div id="herbal-tea" class="subitem-list" style="display: none;">
+    <h4><b>HERBAL TEA</b></h4><br>
+    <div class="subitem-row">
+
+      <div class="item-card">
+        <img src="images/cart/Blue Tea.webp" alt="Pork Masala">
+        <div class="card-body">
+          <p><span>Blue Tea</span></p>
+          <button class="add-to-cart-btn" data-id="1" data-name="Blue Tea">Add to Cart</button>>
+        </div>
+      </div>
+
+      <div class="item-card">
+        <img src="images/cart/Cardamom Tea.webp" alt="Pork Masala">
+        <div class="card-body">
+          <p><span>Cardamom Tea</span></p>
+          <button class="add-to-cart-btn" data-id="2" data-name="Cardamom Tea">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--dosa counter-->
+
+  <div id="dosa-counter" class="subitem-list" style="display: none;">
+    <h4><b>DOSA VARIETIES</b></h4><br>
+    <div class="subitem-row">
+
+      <div class="item-card">
+        <img src="images/cart/Dosa.webp" alt="Pork Masala">
+        <div class="card-body">
+          <p><span>Dosa</span></p>
+          <button class="add-to-cart-btn" data-id="1" data-name="Dosa">Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="item-card">
+        <img src="images/cart/Masala Dosa.webp" alt="Pork Masala">
+        <div class="card-body">
+          <p><span>Masala Dosa</span></p>
+          <button class="add-to-cart-btn" data-id="2" data-name="Masala Dosa">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <ul class="social-links list-inline">
+            <a href="index.html" class="footer-home-icon">
+              <i class="fas fa-home"></i> 
+            </a>
+            <li class="list-inline-item"><a href="about.html"><i class="fas fa-info-circle"></i></a></li>
+            <li class="list-inline-item"><a href="https://www.instagram.com" target="_blank"><i
+                  class="fab fa-instagram"></i></a></li>
+            <li class="list-inline-item"><a href="https://www.facebook.com" target="_blank"><i
+                  class="fab fa-facebook"></i></a></li>
+            <li class="list-inline-item"><a href="https://wa.me/1234567890" target="_blank"><i
+                  class="fab fa-whatsapp"></i></a></li>
+            <li class="list-inline-item"><a href="terms-and-conditions.html"><i class="fas fa-file-contract"></i></a>
+            </li>
+            <li class="list-inline-item"><a class="footer-icon" href="#" id="share-btn" title="Share This Page"><i
+                  class="fas fa-share-alt"></i></a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="text-center">
+        <p>&copy; 2024 Your Company. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+  <!-- JavaScript -->
+  <!-- Bootstrap JavaScript Bundle (includes Popper) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+  <script>
+    function showCategory(categoryId) {
+      // Hide all main category lists
+      const subitemLists = document.querySelectorAll('.subitem-list');
+      subitemLists.forEach((list) => {
+        list.style.display = 'none';  // Hide all main items
+      });
+
+      // Hide all sub-items within categories
+      const allSubItems = document.querySelectorAll('.subitem');
+      allSubItems.forEach((subitem) => {
+        subitem.style.display = 'none';  // Hide all subitems
+      });
+
+      // Show the selected main category
+      const selectedCategory = document.getElementById(categoryId);
+      if (selectedCategory) {
+        selectedCategory.style.display = 'block';  // Show only the selected category
+      }
+    }
+  </script>
+
+  <script>
+
+    // Function to update the cart display in the navbar
+    function updateCartDisplay(cart) {
+      // Get the number of items in the cart
+      const itemCount = Object.keys(cart).length;
+      // Update the cart count badge
+      document.getElementById('cart-count').textContent = itemCount;
+    }
+
+    // Function to handle 'Add to Cart' button clicks
+    function addToCart(event) {
+      const button = event.target;
+      const itemName = button.getAttribute('data-name');
+
+      // Get the cart from localStorage
+      let cart = JSON.parse(localStorage.getItem('cart')) || {};
+
+      // Check if the item is already in the cart by name
+      const itemInCart = Object.values(cart).find(item => item.name === itemName);
+
+      if (itemInCart) {
+        // If the item is found in the cart, show a message
+        alert(`${itemName} is already in the cart!`);
+      } else {
+        // If the item is not found, add a new item with a quantity of 1
+        const itemId = Date.now(); // Generate a unique ID based on current time
+        cart[itemId] = {
+          name: itemName,
+          quantity: 1
+        };
+
+        // Save the updated cart to localStorage
+        localStorage.setItem('cart', JSON.stringify(cart));
+
+        // Update the cart display in the navbar
+        updateCartDisplay(cart);
+
+        // Display a message indicating the item has been added
+        alert(`${itemName} added to cart!`);
+      }
+    }
+
+    // Initialize the cart from localStorage on page load
+    function initializeCart() {
+      let cart = JSON.parse(localStorage.getItem('cart')) || {};
+      updateCartDisplay(cart);
+    }
+
+    // Attach click event listeners to all 'Add to Cart' buttons
+    document.addEventListener('DOMContentLoaded', () => {
+      initializeCart();
+      document.querySelectorAll('.add-to-cart-btn').forEach(button => {
+        button.addEventListener('click', addToCart);
+      });
+    });
+
+  </script>
+
+
+
+
+  <script>
+    // JavaScript for Sharing Functionality
+    document.getElementById('share-btn').addEventListener('click', function (event) {
+      event.preventDefault();
+      if (navigator.share) {
+        navigator.share({
+          title: document.title,
+          text: 'Check out this page:',
+          url: window.location.href
+        }).then(() => {
+          console.log('Thanks for sharing!');
+        }).catch((error) => {
+          console.error('Error sharing:', error);
+        });
+      } else {
+        alert('Your browser does not support the Share API.');
+      }
+    });
+  </script>
+
+  <!-- JavaScript -->
+  <!-- Bootstrap JavaScript Bundle (includes Popper) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+
+
+
+
+  </body>
+
+</html>
