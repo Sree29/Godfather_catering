@@ -299,12 +299,13 @@
       padding: 0;
       /* Remove default padding */
       height: 40px;
-      /* Height of the tab container */
-      background-color: #49b200;
-      /* Background color for tabs */
+     
+      background-color: #49b200; 
+   
       border: 1px solid #49b200;
-      /* Overall border for the container */
-      box-shadow: 0 0 0 1px #49b200;
+ 
+     box-shadow: 0 0 0 1px #49b200;
+   
       /* Ensure border color matches background */
       overflow: hidden;
       /* Hide overflow to prevent issues with visible tabs */
@@ -321,8 +322,9 @@
       align-items: center;
       /* Center vertically within the nav-item */
       justify-content: center;
-      /* Center horizontally within the nav-item */
+      
       background-color: #49b200;
+    
       /* Background color for tabs */
       border-radius: 0;
       /* Remove rounded corners for individual tabs */
@@ -524,8 +526,56 @@
       border-radius: 50%;
       padding: 2px 6px;
     }
+       /* Custom styles */
+       .navbar {
+        background-color: #132945; /* Dark background */
+        padding: 1.5rem 0;
+        position: sticky; /* Make the navbar sticky */
+        top: 0; /* Stick it to the top */
+        z-index: 1000; /* Ensure it stays above other content */
+    }
+    
+    .navbar-brand, .nav-link {
+        color: white!important; /* White text */
+        font-size: 1.2rem; 
+    }
+    .nav-link:hover {
+        color: #49b200 !important; /* Yellow text on hover */
+    }  
+    /* Active link color */
+.nav-item.active .nav-link {
+  color: #49b200 !important; /* Green color for active link */
+}
+
   </style>
 </head>
+<nav class="navbar navbar-expand-lg">
+  <div class="container">
+      <!-- <a class="navbar-brand" href="#">Your Brand</a> -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+              <li class="nav-item active">
+                  <a class="nav-link" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="about.html">About</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="beauty.html">Beautician</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="Event_management.html">Event Management</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="Photography.html">Photography</a>
+            </li>
+          </ul>
+      </div>
+  </div>
+</nav>
 <a href="cart.html" class="cart-icon-fixed" title="View Cart">
   <i class="fas fa-shopping-cart"></i>
   <span id="cart-count" class="badge">0</span> <!-- Cart count badge -->
@@ -537,10 +587,10 @@
   <h2>WEDDING EVENT & CATERS<br> Estd: 2011</h2>
 
   <!-- Search Bar -->
-  <div class="search-bar">
+  <!-- <div class="search-bar">
     <input type="text" placeholder="What are you looking for ?">
     <button type="button"><i class="fas fa-search"></i></button>
-  </div>
+  </div> -->
 </header>
 <!-- Centered Tab Navigation -->
 
@@ -770,6 +820,28 @@
           <button class="add-to-cart-btn" data-id="2" data-name="Strawberry Velvette">Add to Cart</button>
         </div>
       </div>
+
+      <div class="item-card">
+        <img src="images/cart/Badam Pista Velvette.webp" alt="Welcome Drink Detail 1">
+        <div class="card-body">
+          <p><span>Badam Pista Velvette</span></p>
+          <button class="add-to-cart-btn" data-id="2" data-name="Badam Pista Velvette">Add to Cart</button>
+        </div>
+      </div>
+      <div class="item-card">
+        <img src="images/cart/chocolate flip.webp" alt="Welcome Drink Detail 1">
+        <div class="card-body">
+          <p><span>Chocolate Flip</span></p>
+          <button class="add-to-cart-btn" data-id="2" data-name="Chocolate Flip">Add to Cart</button>
+        </div>
+      </div>
+      <div class="item-card">
+        <img src="images/cart/mango velvette.webp" alt="Welcome Drink Detail 1">
+        <div class="card-body">
+          <p><span>Mango Velvette</span></p>
+          <button class="add-to-cart-btn" data-id="2" data-name="Mango Velvette">Add to Cart</button>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -781,18 +853,43 @@
     <div class="subitem-row">
 
       <div class="item-card">
-        <img src="images/cart/Banana Bonkers.webp" alt="Pork Masala">
+        <img src="images/cart/Banana Bonkers.webp" alt="Banana Bonkers">
         <div class="card-body">
           <p><span>Banana Bonkers</span></p>
           <button class="add-to-cart-btn" data-id="1" data-name="Banana Bonkers">Add to Cart</button>
         </div>
       </div>
 
+
       <div class="item-card">
-        <img src="images/cart/Mojito.webp" alt="Pork Masala">
+        <img src="images/cart/Mojito.webp" alt="Mojito">
         <div class="card-body">
           <p><span>Mojito</span></p>
           <button class="add-to-cart-btn" data-id="2" data-name="Mojito">Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="item-card">
+        <img src="images/cart/blue shoe.webp" alt="Blue Shoe">
+        <div class="card-body">
+          <p><span>Blue Shoe</span></p>
+          <button class="add-to-cart-btn" data-id="1" data-name="Blue Shoe">Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="item-card">
+        <img src="images/cart/cherry cocktail.webp" alt="Cherry Cocktail">
+        <div class="card-body">
+          <p><span>Cherry Cocktail</span></p>
+          <button class="add-to-cart-btn" data-id="1" data-name="Cherry Cocktail">Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="item-card">
+        <img src="images/cart/gabbie's punch.webp" alt="gabbies's punch.webp">
+        <div class="card-body">
+          <p><span>Gabbies Punch</span></p>
+          <button class="add-to-cart-btn" data-id="1" data-name="Gabbies Punch">Add to Cart</button>
         </div>
       </div>
     </div>
@@ -817,6 +914,27 @@
           <button class="add-to-cart-btn" data-id="2" data-name="Kai Pola">Add to Cart</button>
         </div>
       </div>
+      <div class="item-card">
+        <img src="images/cart/chattipathiri.webp" alt="Some Snack">
+        <div class="card-body">
+          <p><span>Chattipathiri</span></p>
+          <button class="add-to-cart-btn" data-id="2" data-name="Chattipathiri">Add to Cart</button>
+        </div>
+      </div>
+      <div class="item-card">
+        <img src="images/cart/kalthappam.webp" alt="Some Snack">
+        <div class="card-body">
+          <p><span>Kalthappam</span></p>
+          <button class="add-to-cart-btn" data-id="2" data-name="Kalthappam">Add to Cart</button>
+        </div>
+      </div>
+      <div class="item-card">
+        <img src="images/cart/elanchi.webp" alt="Some Snack">
+        <div class="card-body">
+          <p><span>Kai Pola</span></p>
+          <button class="add-to-cart-btn" data-id="2" data-name="Elanchi">Add to Cart</button>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -835,6 +953,30 @@
       </div>
 
       <div class="item-card">
+        <img src="images/cart/Chicken Nuggets.webp" alt="Some Snack">
+        <div class="card-body">
+          <p><span>Chicken Nuggets</span></p>
+          <button class="add-to-cart-btn" data-id="2" data-name="Chicken Nuggets">Add to Cart</button>
+
+        </div>
+      </div>
+      <div class="item-card">
+        <img src="images/cart/chicken lollipop.webp" alt="Some Snack">
+        <div class="card-body">
+          <p><span>Chicken lollipop</span></p>
+          <button class="add-to-cart-btn" data-id="2" data-name="Chicken lollipop">Add to Cart</button>
+
+        </div>
+      </div>
+      <div class="item-card">
+        <img src="images/cart/meat cutlet.webp" alt="Some Snack">
+        <div class="card-body">
+          <p><span>Meat Cutlet</span></p>
+          <button class="add-to-cart-btn" data-id="2" data-name="">Add to Cart</button>
+
+        </div>
+      </div>
+      <div class="item-card">
         <img src="images/cart/Singapore Fried Rice.webp" alt="Some Snack">
         <div class="card-body">
           <p><span>Singapore Fried Rice</span></p>
@@ -842,6 +984,7 @@
 
         </div>
       </div>
+
     </div>
   </div>
 
@@ -1417,32 +1560,22 @@
     </div>
   </div>
 
-
   <footer>
     <div class="container">
       <div class="row">
         <div class="col-md-12 text-center">
-          <ul class="social-links list-inline">
-            <a href="index.html" class="footer-home-icon">
-              <i class="fas fa-home"></i> 
-            </a>
-            <li class="list-inline-item"><a href="about.html"><i class="fas fa-info-circle"></i></a></li>
-            <li class="list-inline-item"><a href="https://www.instagram.com" target="_blank"><i
-                  class="fab fa-instagram"></i></a></li>
-            <li class="list-inline-item"><a href="https://www.facebook.com" target="_blank"><i
-                  class="fab fa-facebook"></i></a></li>
-            <li class="list-inline-item"><a href="https://wa.me/1234567890" target="_blank"><i
-                  class="fab fa-whatsapp"></i></a></li>
-            <li class="list-inline-item"><a href="terms-and-conditions.html"><i class="fas fa-file-contract"></i></a>
-            </li>
+          <ul class="social-links">
+            <li><a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a></li>
+            <li><a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a></li>
+            <li><a href="https://wa.me/1234567890" target="_blank"><i class="fab fa-whatsapp"></i></a></li>
+            <li><a href="terms-and-conditions.html"><i class="fas fa-file-contract"></i></a></li>
             <li class="list-inline-item"><a class="footer-icon" href="#" id="share-btn" title="Share This Page"><i
                   class="fas fa-share-alt"></i></a></li>
           </ul>
         </div>
       </div>
-
       <div class="text-center">
-        <p>&copy; 2024 Your Company. All Rights Reserved.</p>
+        <p>&copy; 2024 Godfather. All Rights Reserved.</p>
       </div>
     </div>
   </footer>
@@ -1472,54 +1605,48 @@
   </script>
 
   <script>
-
     // Function to update the cart display in the navbar
     function updateCartDisplay(cart) {
-      // Get the number of items in the cart
       const itemCount = Object.keys(cart).length;
-      // Update the cart count badge
       document.getElementById('cart-count').textContent = itemCount;
     }
-
-    // Function to handle 'Add to Cart' button clicks
+  
     function addToCart(event) {
       const button = event.target;
       const itemName = button.getAttribute('data-name');
-
-      // Get the cart from localStorage
+      const itemImage = button.getAttribute('data-image'); // Ensure you have this attribute
+    
       let cart = JSON.parse(localStorage.getItem('cart')) || {};
-
-      // Check if the item is already in the cart by name
-      const itemInCart = Object.values(cart).find(item => item.name === itemName);
-
-      if (itemInCart) {
-        // If the item is found in the cart, show a message
-        alert(`${itemName} is already in the cart!`);
-      } else {
-        // If the item is not found, add a new item with a quantity of 1
-        const itemId = Date.now(); // Generate a unique ID based on current time
+      const itemId = Date.now();
+    
+      // Prompt user for a note
+      const note = prompt(`Add a note for ${itemName}:`);
+    
+      // Check if the user clicked "Cancel"
+      if (note !== null) {
+        // User added a note
         cart[itemId] = {
           name: itemName,
-          quantity: 1
+          image: itemImage,
+          quantity: 1,
+          note: note // Store the note
         };
-
-        // Save the updated cart to localStorage
-        localStorage.setItem('cart', JSON.stringify(cart));
-
-        // Update the cart display in the navbar
-        updateCartDisplay(cart);
-
-        // Display a message indicating the item has been added
-        alert(`${itemName} added to cart!`);
-      }
+        
+        // Alert message includes the note
+        alert(`${itemName} added to cart!${note ? ' Note: ' + note : ''}`);
+      } 
+    
+      localStorage.setItem('cart', JSON.stringify(cart));
+      updateCartDisplay(cart);
     }
-
+    
+  
     // Initialize the cart from localStorage on page load
     function initializeCart() {
       let cart = JSON.parse(localStorage.getItem('cart')) || {};
       updateCartDisplay(cart);
     }
-
+  
     // Attach click event listeners to all 'Add to Cart' buttons
     document.addEventListener('DOMContentLoaded', () => {
       initializeCart();
@@ -1527,31 +1654,8 @@
         button.addEventListener('click', addToCart);
       });
     });
-
   </script>
-
-
-
-
-  <script>
-    // JavaScript for Sharing Functionality
-    document.getElementById('share-btn').addEventListener('click', function (event) {
-      event.preventDefault();
-      if (navigator.share) {
-        navigator.share({
-          title: document.title,
-          text: 'Check out this page:',
-          url: window.location.href
-        }).then(() => {
-          console.log('Thanks for sharing!');
-        }).catch((error) => {
-          console.error('Error sharing:', error);
-        });
-      } else {
-        alert('Your browser does not support the Share API.');
-      }
-    });
-  </script>
+  
 
   <!-- JavaScript -->
   <!-- Bootstrap JavaScript Bundle (includes Popper) -->

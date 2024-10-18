@@ -13,285 +13,342 @@
   <style>
     /* Header Styles */
     body {
-      font-family: 'Times New Roman', Times, serif;
-  
-    }
+    font-family: 'Times New Roman', Times, serif;
+}
+        .menu-section {
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
 
-    p {
-      font-size: medium;
-    }
+        .menu-card {
+            border: 1px solid #ddd;
+            margin: 10px;
+            width: 45%;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
 
-    .hero-wrap {
-      background-size: cover;
-      background-position: center center;
-      background-repeat: no-repeat;
-      position: relative;
-      width: 100%;
-      height: 70vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
+        .menu-card img {
+            width: 100%;
+            height: auto;
+        }
 
-    .hero-wrap .overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.5);
-      z-index: 1;
-    }
+        .menu-title {
+            background-color: #8BC34A;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-weight: bold;
+        }
 
-    .hero-wrap .container {
-      position: relative;
-      z-index: 2;
-    }
+        .menu-list {
+            padding: 20px;
+        }
 
-    .header {
-      text-align: center;
-      background: url('assets/img/background.jpg') no-repeat center center/cover;
-      color: #fff;
-      padding: 50px 20px;
-    }
+        .menu-list ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+        }
 
-    .header h1,
-    .header h2 {
-      margin: 0;
-      color: black;
-    }
+        .menu-list ul li {
+            width: 50%; /* Display in two columns */
+            padding: 5px 0;
+            font-size: 16px;
+        }
 
-    .header h1 {
-      font-size: 3rem;
-      font-weight: bold;
-    }
-
-    .header h2 {
-      font-size: 1.5rem;
-      font-weight: normal;
-      margin-top: 10px;
-    }
-
-   
-
-    /* Existing Card Styles */
-    .card.custom-card {
-      border: 2px solid black;
-      border-radius: 50px;
-      transition: all 0.3s ease;
-      /* Smooth transition for hover effects */
-      height: 250px;
-      /* Increase height of the card */
-      display: flex;
-      flex-direction: column !important;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      /* Add shadow effect */
-
-    }
-
-    /* Hover Effect */
-    .card.custom-card:hover {
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-      /* Enhance shadow on hover */
-      border-color: green;
-      /* Optional: change border color on hover */
-      transform: translateY(-10px);
-      /* Move the card up */
-    }
-
-    /* Optional: Adding an active effect for when the card is clicked */
-    .card.custom-card:active {
-      transform: translateY(-5px);
-      /* Slightly reduce the upward movement */
-    }
-
-    .icon-container {
-      background-color: white;
-      /* Circle background color */
-      border-radius: 50%;
-      /* Makes the container a circle */
-      width: 80px;
-      /* Adjust size as needed */
-      height: 80px;
-      /* Adjust size as needed */
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 0 15px 5px rgba(196, 194, 194, 0.3);
-      /* Optional shadow for effect */
-      margin: 0 auto;
-      /* Center the container horizontally */
-    }
-
-    .icon-image {
-      width: 60px;
-      /* Adjust the width as needed */
-      height: 60px;
-      /* Adjust the height as needed */
-      object-fit: cover;
-      /* Ensure the image covers its container without distortion */
-      border-radius: 50%;
-      /* Ensure the image itself is circular */
-    }
-
-    .card-body {
-      flex: 1;
-      /* Remaining space in the card after the image */
-      padding: 15px !important;
-      display: flex !important;
-      flex-direction: column !important;
-      justify-content: center !important;
-      /* Center content vertically */
-
-    }
-
-    .padding-section {
-      padding: 10px 0;
-      /* Adjust padding as needed (top and bottom) */
-      background-color: white;
-      /* Optional: background color for visibility */
-
-    }
-
-    .ftco-section {
-      padding: 50px 0;
-      /* Adjust the top and bottom padding as needed */
-      padding-bottom: 100px;
-      /* Additional bottom padding to create space below the cards */
-      background-color: white;
-      /* Optional: background color for visibility */
-    }
-
-    /* Ensure the navbar items align properly */
-    .navbar-nav {
-      display: flex;
-      align-items: center;
-      /* Align items vertically center */
-    }
+        .menu-list ul li span {
+            color: #8BC34A;
+        }
 
 
-    .add-to-cart-btn {
-      background-color: #49b200;
-      /* A vibrant color for the button */
-      color: white;
-      /* White text color */
-      border: none;
-      /* Remove default border */
-      padding: 5px 5px;
-      /* Add padding */
-      font-size: 14px;
-      /* Increase font size */
-      border-radius: 30px;
-      /* Rounded corners */
-      cursor: pointer;
-      /* Pointer cursor on hover */
-      transition: background-color 0.3s, transform 0.2s;
-      /* Smooth transitions */
-      width: 100px;
-      margin-top: 10px;
-      align-self: center;
-      text-align: center;
-    }
-
-    .add-to-cart-btn:hover {
-      background-color: #49b200;
-      /* Slightly darker color on hover */
-      transform: scale(1.05);
-      /* Slightly enlarge button on hover */
-    }
-
-    .add-to-cart-btn:active {
-      background-color: #49b200;
-      /* Even darker color when pressed */
-      transform: scale(0.98);
-      /* Slightly shrink button on click */
-    }
 
 
-    
-    footer {
-      background-color: #f8f9fa;
-      padding: 20px 0;
-      position: relative;
-      bottom: 0;
-      width: 100%;
-    }
 
-    .social-links {
-      list-style: none;
-      padding: 0;
-    }
+        /* Hero Section */
+.hero-wrap {
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  position: relative;
+  width: 100%;
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-    .social-links li {
-      display: inline;
-      margin: 0 10px;
-    }
+.hero-wrap .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
 
-    .social-links a {
-      color: #333;
-      text-decoration: none;
-      font-size: 24px;
-    }
+.hero-wrap .container {
+  position: relative;
+  z-index: 2;
+}
 
-    .social-links a:hover {
-      color: #49b200 ;
-      /* Change this to your desired hover color */
-    }
+/* Header */
+.header {
+  text-align: center;
+  background: url('assets/img/background.jpg') no-repeat center center/cover;
+  color: #fff;
+  padding: 50px 20px;
+}
 
-    footer p {
-      margin: 10px 0 0;
-    }
+.header h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  margin: 0;
+  color: black;
+}
 
-    /* Cart Icon Positioning */
-    .cart-icon-fixed {
-      position: fixed;
-      right: 10px;
-      /* Adjust the right distance from the page edge as needed */
-      top: 50%;
-      /* Vertically center the icon */
-      transform: translateY(-50%);
-      /* Center the icon vertically */
-      z-index: 9999;
-      /* Ensure the icon is above other content */
-      background-color: #fff;
-      /* Background color for better visibility */
-      border-radius: 50%;
-      padding: 10px;
-      /* Add padding to the icon */
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      /* Optional shadow for the icon */
-    }
+.header h2 {
+  font-size: 1.5rem;
+  font-weight: normal;
+  margin-top: 10px;
+  color: black;
+}
 
-    /* Optional: Styling for the cart icon */
-    .cart-icon-fixed i {
-      font-size: 24px;
-      /* Size of the icon */
-      color: #49b200;
-      /* Icon color */
-    }
+/* Card Styles */
+.card.custom-card {
+  border: 2px solid black;
+  border-radius: 20px; /* Smaller radius for smoother corners */
+  transition: all 0.3s ease;
+  height: auto;
+  width: 350px; /* Adjust width to make the card more compact */
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  margin: 20px; /* Add margin for spacing between cards */
+  padding: 20px; /* Add padding for inner spacing */
+}
 
-    .cart-icon-fixed .badge {
-      position: absolute;
-      top: -10px;
-      right: -10px;
-      background-color: red;
-      color: white;
-      font-size: 12px;
-      border-radius: 50%;
-      padding: 2px 6px;
-    }
-  </style>
+/* Hover Effect */
+.card.custom-card:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  border-color: green;
+  transform: translateY(-10px);
+}
+
+/* Icon Container */
+.icon-container {
+  background-color: white;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 15px 5px rgba(196, 194, 194, 0.3);
+  margin: 0 auto;
+}
+
+.icon-image {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* Card Body */
+.card-body {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* Add to Cart Button */
+.add-to-cart-btn {
+  background-color: #49b200;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  margin-top: 15px;
+  width: fit-content;
+  text-align: center;
+}
+
+.add-to-cart-btn:hover {
+  background-color: #3d9100;
+  transform: scale(1.05);
+}
+
+.add-to-cart-btn:active {
+  transform: scale(0.98);
+}
+
+/* Footer */
+footer {
+  background-color: #f8f9fa;
+  padding: 20px 0;
+  width: 100%;
+}
+
+.social-links {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+}
+
+.social-links li {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+.social-links a {
+  color: #333;
+  text-decoration: none;
+  font-size: 24px;
+}
+
+.social-links a:hover {
+  color: #49b200;
+}
+
+footer p {
+  text-align: center;
+  margin: 10px 0 0;
+}
+
+/* Cart Icon Positioning */
+.cart-icon-fixed {
+  position: fixed;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 9999;
+  background-color: #fff;
+  border-radius: 50%;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.cart-icon-fixed i {
+  font-size: 24px;
+  color: #49b200;
+}
+
+.cart-icon-fixed .badge {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background-color: red;
+  color: white;
+  font-size: 12px;
+  border-radius: 50%;
+  padding: 2px 6px;
+}
+
+/* Layout for 3-column item list */
+.item-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  width: 30%;
+  margin: 10px 5px;
+}
+
+.item img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+/* Adjusted button style for Add to Cart */
+.add-to-cart-btn {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.add-to-cart-btn:hover {
+  background-color: #218838;
+}
+.navbar {
+background-color: #132945; /* Dark background */
+padding: 1.5rem 0;
+position: sticky; /* Make the navbar sticky */
+top: 0; /* Stick it to the top */
+z-index: 1000; /* Ensure it stays above other content */
+}
+
+.navbar-brand, .nav-link {
+  color: white!important; /* White text */
+  font-size: 1.2rem; 
+}
+.nav-link:hover {
+  color: #49b200 !important; /* Yellow text on hover */
+}  
+/* Active link color */
+.nav-item.active .nav-link {
+color: #49b200 !important; /* Green color for active link */
+}
+    </style>
 </head>
-
+<nav class="navbar navbar-expand-lg">
+  <div class="container">
+      <!-- <a class="navbar-brand" href="#">Your Brand</a> -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                  <a class="nav-link" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="about.html">About</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="beauty.html">Beautician</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="Event_management.html">Event Management</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="Photography.html">Photography</a>
+            </li>
+          </ul>
+      </div>
+  </div>
+</nav>
 <body>
-
   <a href="cart.html" class="cart-icon-fixed" title="View Cart">
     <i class="fas fa-shopping-cart"></i>
     <span id="cart-count" class="badge">0</span> <!-- Cart count badge -->
   </a>
   
   <!-- Hero Section -->
-  <section class="hero-wrap hero-wrap-2 js-fullheight"
+  <!-- <section class="hero-wrap hero-wrap-2 js-fullheight"
     style="background-image: url('images/new-project1693212040109.webp');" data-stellar-background-ratio="0.5">
     <div class="overlay"></div>
     <div class="container">
@@ -299,194 +356,256 @@
       </div>
     </div>
   </section>
-  <div class="padding-section"></div>
+  <div class="padding-section"></div> -->
   <!-- Sadya Section -->
-  <section class="ftco-section">
-    <div class="container">
-      <div class="row justify-content-center mb-5">
-        <div class="col-md-7 text-center heading-section ftco-animate">
-          <h3 class="subheading" style="color:blue;"><b>SADYA</b></h3>
-        </div>
+  <style>
+    /* Add this CSS to your stylesheet */
+    .hidden {
+        display: none; /* Hide the element */
+    }
+</style>
+
+<section class="ftco-section" style="padding-top: 30px;">
+  <div class="container">
+    <div class="row justify-content-center mb-5">
+      <div class="col-md-7 text-center heading-section ftco-animate" style="margin-bottom: 20px;"> <!-- Adjust the value as needed -->
+          <h3 class="subheading" style="color:blue;"><b>Sadya</b></h3>
       </div>
-
-      <div class="row">
-        <!-- Sadya Card 1 -->
-        <div class="col-md-3 d-flex align-self-stretch ftco-animate">
-          <div class="card custom-card text-center w-100"
-            style="background:#fff; border: none; box-shadow: rgba(247, 235, 1, 0.2) 0px 7px 29px 0px;">
-            <div class="card-body">
-              <div class="icon-container">
-                <img src="images/cart/Salt.webp" alt="Description of image" class="icon-image">
-              </div><br>
-              <div class="text w-100">
-                <h5 class="mb-2" style="color: black;">Salt</h5>
-
-              </div>
-              <button class="add-to-cart-btn" data-id="1" data-name="Salt">Add to Cart</button>
-
-            </div>
-          </div>
-        </div>
-
-        <!-- Service Card 2 -->
-        <div class="col-md-3 d-flex align-self-stretch ftco-animate">
-          <div class="card custom-card text-center w-100"
-            style="background:#fff; border: none; box-shadow: rgba(247, 235, 1, 0.2) 0px 7px 29px 0px;">
-            <div class="card-body">
-              <div class="icon-container">
-                <img src="images/cart/Sharkkara Upperi.webp" alt="Description of image" class="icon-image">
-              </div><br>
-              <div class="text w-100">
-                <h5 class="mb-2" style="color: black;">Sharkkara Upperi</h5>
-              </div>
-              <button class="add-to-cart-btn" data-id="2" data-name="Sharkkara Upperi">Add to Cart</button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Service Card 3 -->
-        <div class="col-md-3 d-flex align-self-stretch ftco-animate">
-          <div class="card custom-card text-center w-100"
-            style="background:#fff; border: none; box-shadow: rgba(247, 235, 1, 0.2) 0px 7px 29px 0px;">
-            <div class="card-body">
-              <div class="icon-container">
-                <img src="images/cart/Varutha Upperi.webp" alt="Description of image" class="icon-image">
-              </div><br>
-              <div class="text w-100">
-                <h5 class="mb-2" style="color: black;">Varutha Upperi</h5>
-              </div>
-              <button class="add-to-cart-btn" data-id="3" data-name="Varutha Upperi">Add to Cart</button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Service Card 4 -->
-        <div class="col-md-3 d-flex align-self-stretch ftco-animate">
-          <div class="card custom-card text-center w-100"
-            style="background:#fff; border: none; box-shadow: rgba(247, 235, 1, 0.2) 0px 7px 29px 0px;">
-            <div class="card-body">
-              <div class="icon-container">
-                <img src="images/cart/Ghee.webp" alt="Description of image" class="icon-image">
-
-              </div><br>
-              <div class="text w-100">
-                <h5 class="mb-2" style="color: black;">Ghee</h5>
-              </div>
-              <button class="add-to-cart-btn" data-name="Ghee" data-category="sadya">Add to Cart</button>
-
-              <!-- <button class="btn btn-primary add-to-cart-btn" data-name="Ghee" data-category="sadya">Add to Cart</button> -->
-            </div>
-          </div>
-        </div>
-      </div>
+  </div>
+  
+    
+    <div class="col-md-7 text-left heading-section ftco-animate">
+        <!-- Filter Form -->
+        <form id="filter-form" class="filter-form text-left mb-4">
+            <label for="item-count">Filter by Number of Items:</label>
+            <select name="item-count" id="item-count" class="form-control" style="display:inline-block; width:auto; margin-right:10px;">
+                <option value="all">All</option>
+                <option value="20">20 Items</option>
+                <option value="27">27 Items</option>
+                <option value="more-than-27">More than 27 Items</option>
+            </select>
+            <button type="button" class="btn btn-primary" onclick="filterMenu()">Filter</button>
+        </form>
     </div>
-  </section>
+    
+    </div>
 
-  <footer></footer>
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12 text-center">
-          <ul class="social-links">
-            <a href="index.html" class="footer-home-icon">
-              <i class="fas fa-home"></i> 
+    <div class="row" id="menu-items">
+      <!-- Card with 20 items -->
+      <div class="col-md-4 menu-card" data-count="20">
+        <img src="images/cart/traditional_sadhya.webp" alt="Traditional Sadhya" class="img-fluid">
+        <div class="menu-title">Traditional Sadhya</div>
+        <div class="menu-list">
+            <ul>
+                <li><span>01.</span> Kichadi</li>
+                <li><span>02.</span> Pachadi (Pineapple)</li>
+                <li><span>03.</span> Koottucurry / Erisseri</li>
+                <li><span>04.</span> Kaalan</li>
+                <li><span>05.</span> Ishtu / Olan</li>
+                <li><span>06.</span> Aviyal</li>
+                <li><span>07.</span> Thoran</li>
+                <li><span>08.</span> Pulissery</li>
+                <li><span>09.</span> Sambar</li>
+                <li><span>10.</span> Moru</li>
+                <li><span>11.</span> Pickle</li>
+                <li><span>12.</span> Banana Chips</li>
+                <li><span>13.</span> Sharkara Varatti</li>
+                <li><span>14.</span> Payasam (1 Type)</li>
+                <li><span>15.</span> Banana</li>
+                <li><span>16.</span> Parippu - Ghee</li>
+                <li><span>17.</span> Pappadam</li>
+                <li><span>18.</span> Poovan Pazham</li>
+                <li><span>19.</span> Payasam (2 Types)</li>
+                <li><span>20.</span> Chukku Vellam</li>
+            </ul>
+            <button class="add-to-cart-btn" data-name="traditional_sadhya">Add to Cart</button>
+            <a href="https://wa.me/9447524108?text=I%20would%20like%20to%20book%20the%20Traditional%20Sadhya%20package" target="_blank" class="whatsapp-btn">
+                <button type="button">Book via WhatsApp</button>
             </a>
-            <li><a href="about.html"><i class="fas fa-info-circle"></i></a></li>
-            <li><a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a></li>
-            <li><a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a></li>          
-            <li><a href="https://wa.me/1234567890" target="_blank"><i class="fab fa-whatsapp"></i></a></li>
-            <li><a href="terms-and-conditions.html"><i class="fas fa-file-contract"></i></a></li>
-            <li class="list-inline-item"><a class="footer-icon" href="#" id="share-btn" title="Share This Page"><i
-              class="fas fa-share-alt"></i></a></li>
+        </div>
+    </div>
+    
+      <!-- Special Sadhya -->
+      <div class="col-md-4 menu-card" data-count="27">
+        <img src="images/cart/special_sadhya.webp" alt="Special Sadhya" class="img-fluid">
+        <div class="menu-title">Special Sadhya</div>
+        <div class="menu-list">
+          <ul>
+            <li><span>01.</span> Kichadi</li>
+            <li><span>02.</span> Pachadi (Pineapple)</li>
+            <li><span>03.</span> Koottucurry / Erisseri</li>
+            <li><span>04.</span> Kaalan</li>
+            <li><span>05.</span> Ishtu / Olan</li>
+            <li><span>06.</span> Masala Curry</li>
+            <li><span>07.</span> Thakkali Curry</li>
+            <li><span>08.</span> Aviyal</li>
+            <li><span>09.</span> Thoran</li>
+            <li><span>10.</span> Parippu Neyyu</li>
+            <li><span>11.</span> Sambar</li>
+            <li><span>12.</span> Pulissery</li>
+            <li><span>13.</span> Mango Pickles</li>
+            <li><span>14.</span> Naranga Pickles</li>
+            <li><span>15.</span> Puliyinji</li>
+            <li><span>16.</span> Inji Thairu</li>
+            <li><span>17.</span> Chammanthy</li>
+            <li><span>18.</span> Kaaya Varavu</li>
+            <li><span>19.</span> Sharkkara Varatti</li>
+            <li><span>20.</span> Chena Varavu</li>
+            <li><span>21.</span> Kesari</li>
+            <li><span>22.</span> Pappadam</li>
+            <li><span>23.</span> Kondattam Mulaku</li>
+            <li><span>24.</span> Rasam</li>
+            <li><span>25.</span> Payasam (3 Types)</li>
+            <li><span>26.</span> Thairu</li>
+            <li><span>27.</span> Chukku Vellam</li>
           </ul>
+          <button class="add-to-cart-btn" data-name="special_sadhya">Add to Cart</button>
         </div>
       </div>
-      <div class="text-center">
-        <p>&copy; 2024 Your Company. All Rights Reserved.</p>
+
+      <!-- Premium Sadhya -->
+      <div class="col-md-4 menu-card" data-count="29">
+        <img src="images/cart/premium_sadhya.webp" alt="Premium Sadhya" class="img-fluid">
+        <div class="menu-title">Premium Sadhya</div>
+        <div class="menu-list">
+          <ul>
+            <li><span>01.</span> Kichadi</li>
+            <li><span>02.</span> Pachadi (Pineapple)</li>
+            <li><span>03.</span> Koottucurry / Erisseri</li>
+            <li><span>04.</span> Kaalan</li>
+            <li><span>05.</span> Ishtu / Olan</li>
+            <li><span>06.</span> Masala Curry</li>
+            <li><span>07.</span> Ulli Theeyal</li>
+            <li><span>08.</span> Aviyal</li>
+            <li><span>09.</span> Thoran</li>
+            <li><span>10.</span> Sambar</li>
+            <li><span>11.</span> Pulissery</li>
+            <li><span>12.</span> Rasam</li>
+            <li><span>13.</span> Thairu</li>
+            <li><span>14.</span> Kaaya Varavu</li>
+            <li><span>15.</span> Sharkkara Varatti</li>
+            <li><span>16.</span> Chena Varavu</li>
+            <li><span>17.</span> Kaipakka Varavu</li>
+            <li><span>18.</span> Kondattam Mulaku</li>
+            <li><span>19.</span> Naranga Curry</li>
+            <li><span>20.</span> Manga Curry/Nellikka Curry</li>
+            <li><span>21.</span> Puliyinji</li>
+            <li><span>22.</span> Injithairu</li>
+            <li><span>23.</span> Parippu - Ghee</li>
+            <li><span>24.</span> Pappadam</li>
+            <li><span>25.</span> Poovan Pazham</li>
+            <li><span>26.</span> Payasam (3 Types)</li>
+            <li><span>27.</span> Sweet Boli</li>
+            <li><span>28.</span> Parippu Payasam</li>
+            <li><span>29.</span> Chukku Vellam</li>
+          </ul>
+          <button class="add-to-cart-btn" data-name="premium_sadhya">Add to Cart</button>
+        </div>
       </div>
     </div>
-  </footer>
-  <script>
+  </div>
+</section>
 
-    // Function to update the cart display in the navbar
-    function updateCartDisplay(cart) {
-      // Get the number of items in the cart
-      const itemCount = Object.keys(cart).length;
-      // Update the cart count badge
-      document.getElementById('cart-count').textContent = itemCount;
-    }
-
-    // Function to handle 'Add to Cart' button clicks
-    function addToCart(event) {
-      const button = event.target;
-      const itemName = button.getAttribute('data-name');
-
-      // Get the cart from localStorage
-      let cart = JSON.parse(localStorage.getItem('cart')) || {};
-
-      // Check if the item is already in the cart by name
-      const itemInCart = Object.values(cart).find(item => item.name === itemName);
-
-      if (itemInCart) {
-        // If the item is found in the cart, show a message
-        alert(`${itemName} is already in the cart!`);
-      } else {
-        // If the item is not found, add a new item with a quantity of 1
-        const itemId = Date.now(); // Generate a unique ID based on current time
-        cart[itemId] = {
-          name: itemName,
-          quantity: 1
-        };
-
-        // Save the updated cart to localStorage
-        localStorage.setItem('cart', JSON.stringify(cart));
-
-        // Update the cart display in the navbar
-        updateCartDisplay(cart);
-
-        // Display a message indicating the item has been added
-        alert(`${itemName} added to cart!`);
-      }
-    }
-
-    // Initialize the cart from localStorage on page load
-    function initializeCart() {
-      let cart = JSON.parse(localStorage.getItem('cart')) || {};
-      updateCartDisplay(cart);
-    }
-
-    // Attach click event listeners to all 'Add to Cart' buttons
-    document.addEventListener('DOMContentLoaded', () => {
-      initializeCart();
-      document.querySelectorAll('.add-to-cart-btn').forEach(button => {
-        button.addEventListener('click', addToCart);
-      });
-    });
-
-  </script>
-
-  <script>
-    // JavaScript for Sharing Functionality
-    document.getElementById('share-btn').addEventListener('click', function (event) {
-      event.preventDefault();
-      if (navigator.share) {
-        navigator.share({
-          title: document.title,
-          text: 'Check out this page:',
-          url: window.location.href
-        }).then(() => {
-          console.log('Thanks for sharing!');
-        }).catch((error) => {
-          console.error('Error sharing:', error);
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <ul class="social-links">
+              <li><a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a></li>
+              <li><a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a></li>
+              <li><a href="https://wa.me/1234567890" target="_blank"><i class="fab fa-whatsapp"></i></a></li>
+              <li><a href="terms-and-conditions.html"><i class="fas fa-file-contract"></i></a></li>
+              <li class="list-inline-item"><a class="footer-icon" href="#" id="share-btn" title="Share This Page"><i
+                    class="fas fa-share-alt"></i></a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="text-center">
+          <p>&copy; 2024 Godfather. All Rights Reserved.</p>
+        </div>
+      </div>
+    </footer>
+      <script>
+        // Function to update the cart display in the navbar
+        function updateCartDisplay(cart) {
+          const itemCount = Object.keys(cart).length;
+          document.getElementById('cart-count').textContent = itemCount;
+        }
+      
+        function addToCart(event) {
+          const button = event.target;
+          const itemName = button.getAttribute('data-name');
+          const itemImage = button.getAttribute('data-image'); // Ensure you have this attribute
+        
+          let cart = JSON.parse(localStorage.getItem('cart')) || {};
+          const itemId = Date.now();
+        
+          // Prompt user for a note
+          const note = prompt(`Add a note for ${itemName}:`);
+        
+          // Check if the user clicked "Cancel"
+          if (note !== null) {
+            // User added a note
+            cart[itemId] = {
+              name: itemName,
+              image: itemImage,
+              quantity: 1,
+              note: note // Store the note
+            };
+            
+            // Alert message includes the note
+            alert(`${itemName} added to cart!${note ? ' Note: ' + note : ''}`);
+          } 
+        
+          localStorage.setItem('cart', JSON.stringify(cart));
+          updateCartDisplay(cart);
+        }
+        
+      
+        // Initialize the cart from localStorage on page load
+        function initializeCart() {
+          let cart = JSON.parse(localStorage.getItem('cart')) || {};
+          updateCartDisplay(cart);
+        }
+      
+        // Attach click event listeners to all 'Add to Cart' buttons
+        document.addEventListener('DOMContentLoaded', () => {
+          initializeCart();
+          document.querySelectorAll('.add-to-cart-btn').forEach(button => {
+            button.addEventListener('click', addToCart);
+          });
         });
-      } else {
-        alert('Your browser does not support the Share API.');
+      </script>
+      
+      <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    
+     
+      <script>
+        function filterMenu() {
+          const filterValue = document.getElementById('item-count').value;
+          console.log('Selected Filter:', filterValue);
+          
+          const menuItems = document.querySelectorAll('.menu-card');
+      
+          menuItems.forEach(item => {
+              const itemCount = parseInt(item.getAttribute('data-count'));
+              console.log('Item Count:', itemCount);
+      
+              if (filterValue === 'all') {
+                  item.style.display = 'block'; // Show all items
+              } else if (
+                  (filterValue === '20' && itemCount === 20) ||
+                  (filterValue === '27' && itemCount === 27) ||
+                  (filterValue === 'more-than-27' && itemCount > 27)
+              ) {
+                  item.style.display = 'block'; // Show item
+              } else {
+                  item.style.display = 'none'; // Hide item
+              }
+          });
       }
-    });
-  </script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
- 
-
-</body>
-
-</html>
+      
+      </script>
+    </body>
+    
+    </html>

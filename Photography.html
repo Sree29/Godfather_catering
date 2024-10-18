@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GODFATHER</title>
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <style>
+    /* Header Styles */
+    body {
+      font-family: 'Times New Roman', Times, serif;
+    }
+
+    p {
+      font-size: medium;
+    }
+
+    .hero-wrap {
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+      position: relative;
+      width: 100%;
+      height: 70vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-wrap .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 1;
+    }
+
+    .hero-wrap .container {
+      position: relative;
+      z-index: 2;
+    }
+
+ 
+
+    .ftco-section {
+      padding: 50px 0;
+      /* Adjust the top and bottom padding as needed */
+      padding-bottom: 100px;
+      /* Additional bottom padding to create space below the cards */
+      background-color: white;
+      /* Optional: background color for visibility */
+    }
+
+    
+    .add-to-cart-btn {
+      background-color: #49b200;
+      /* A vibrant color for the button */
+      color: white;
+      /* White text color */
+      border: none;
+      /* Remove default border */
+      padding: 5px 5px;
+      /* Add padding */
+      font-size: 14px;
+      /* Increase font size */
+      border-radius: 30px;
+      /* Rounded corners */
+      cursor: pointer;
+      /* Pointer cursor on hover */
+      transition: background-color 0.3s, transform 0.2s;
+      /* Smooth transitions */
+      width: 100px;
+      margin-top: 10px;
+      align-self: center;
+      text-align: center;
+    }
+
+    .add-to-cart-btn:hover {
+      background-color: #49b200;
+      /* Slightly darker color on hover */
+      transform: scale(1.05);
+      /* Slightly enlarge button on hover */
+    }
+
+    .add-to-cart-btn:active {
+      background-color: #49b200;
+      /* Even darker color when pressed */
+      transform: scale(0.98);
+      /* Slightly shrink button on click */
+    }
+
+    
+    footer {
+      background-color: #f8f9fa;
+      padding: 20px 0;
+      position: relative;
+      bottom: 0;
+      width: 100%;
+    }
+
+    .social-links {
+      list-style: none;
+      padding: 0;
+    }
+
+    .social-links li {
+      display: inline;
+      margin: 0 10px;
+    }
+
+    .social-links a {
+      color: #333;
+      text-decoration: none;
+      font-size: 24px;
+    }
+
+    .social-links a:hover {
+      color: #49b200 ;
+      /* Change this to your desired hover color */
+    }
+
+    footer p {
+      margin: 10px 0 0;
+    }
+
+
+
+
+    .services-container {
+        display: flex; /* Use flexbox for layout */
+        flex-wrap: wrap; /* Allow items to wrap if necessary */
+        justify-content: center; /* Center items horizontally */
+        margin: 20px; /* Add margin around the container */
+    }
+    
+    .service-item {
+        flex: 1 1 200px; /* Set a base width for items, adjust as needed */
+        margin: 10px; /* Add margin between service items */
+        text-align: center; /* Center the text under the image */
+    }
+    
+    .service-item img {
+        width: 100%; /* Make images responsive */
+        height: auto; /* Maintain aspect ratio */
+        border-radius: 8px; /* Optional: add rounded corners to images */
+    }
+    
+    .service-text {
+        margin-top: 10px; /* Space between the image and text */
+        font-size: 1em; /* Adjust font size */
+        font-weight: bold; /* Make text bold */
+        color: #333; /* Change text color to enhance visibility */
+    }
+    
+    .navbar {
+      background-color: #132945; /* Dark background */
+      padding: 1.5rem 0;
+      position: sticky; /* Make the navbar sticky */
+      top: 0; /* Stick it to the top */
+      z-index: 1000; /* Ensure it stays above other content */
+  }
+  
+    .navbar-brand, .nav-link {
+        color: white!important; /* White text */
+        font-size: 1.2rem; 
+    }
+    .nav-link:hover {
+        color: #49b200 !important; /* Yellow text on hover */
+    }  
+   
+
+  /* Active link color */
+.nav-item.active .nav-link {
+  color: #49b200 !important; /* Green color for active link */
+}
+
+  </style>
+</head>
+<nav class="navbar navbar-expand-lg">
+  <div class="container">
+      <!-- <a class="navbar-brand" href="#">Your Brand</a> -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                  <a class="nav-link" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="about.html">About</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="beauty.html">Beautician</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="Event_management.html">Event Management</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="Photography.html">Photography</a>
+            </li>
+          </ul>
+      </div>
+  </div>
+</nav>
+<body>
+ 
+
+
+  <!-- Hero Section -->
+  <!-- Hero Section -->
+<!-- <section class="hero-wrap hero-wrap-2 js-fullheight" style="background-image: url('images/packages/image.webp');"
+data-stellar-background-ratio="0.5">
+<div class="overlay"></div>
+<div class="container">
+    <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-start">
+    </div>
+</div>
+</section> -->
+<section class="ftco-section" style="padding-bottom: 0px;"> 
+  <div class="container">
+    <div class="row justify-content-center mb-5">
+      <div class="col-md-7 text-center heading-section ftco-animate">
+        <h3 class="subheading" style="color:blue;"><b>Our Photography</b></h3>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="padding-section"></div>
+
+<div class="services-container" style="display: flex; flex-wrap: wrap; justify-content: space-between;">
+  <div class="service-item" style="flex: 1 1 calc(25% - 20px); margin-bottom: 20px;">
+      <img src="images/phptography/photo1.jpg" alt="Skin Care" style="width: 100%;">
+  </div>
+  
+  <div class="service-item" style="flex: 1 1 calc(25% - 20px); margin-bottom: 20px;">
+      <img src="images/phptography/photo2.jpg" alt="Cosmetics" style="width: 100%;">
+  </div>
+  
+  <div class="service-item" style="flex: 1 1 calc(25% - 20px); margin-bottom: 20px;">
+      <img src="images/phptography/photo3.jpg" alt="Cosmetics" style="width: 100%;">
+  </div>
+  
+  <div class="service-item" style="flex: 1 1 calc(25% - 20px); margin-bottom: 20px;">
+      <img src="images/phptography/photo4.jpg" alt="Make-Up" style="width: 100%;">
+  </div>
+  
+  <div class="service-item" style="flex: 1 1 calc(25% - 20px); margin-bottom: 20px;">
+      <img src="images/phptography/photo5.jpg" alt="Make-Up" style="width: 100%;">
+  </div>
+  
+  <div class="service-item" style="flex: 1 1 calc(25% - 20px); margin-bottom: 20px;">
+      <img src="images/phptography/photo6.jpg" alt="Make-Up" style="width: 100%;">
+  </div>
+  
+  <div class="service-item" style="flex: 1 1 calc(25% - 20px); margin-bottom: 20px;">
+      <img src="images/phptography/ptoto7.jpg" alt="Make-Up" style="width: 100%;">
+  </div>
+  
+  <div class="service-item" style="flex: 1 1 calc(25% - 20px); margin-bottom: 20px;">
+      <img src="images/phptography/photo8.jpg" alt="Make-Up" style="width: 100%;">
+  </div>
+</div>
+
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <ul class="social-links">
+          <li><a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a></li>
+          <li><a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a></li>
+          <li><a href="https://wa.me/1234567890" target="_blank"><i class="fab fa-whatsapp"></i></a></li>
+          <li><a href="terms-and-conditions.html"><i class="fas fa-file-contract"></i></a></li>
+          <li class="list-inline-item"><a class="footer-icon" href="#" id="share-btn" title="Share This Page"><i
+                class="fas fa-share-alt"></i></a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="text-center">
+      <p>&copy; 2024 Godfather. All Rights Reserved.</p>
+    </div>
+  </div>
+</footer>
+  
+</body>
+
+</html>

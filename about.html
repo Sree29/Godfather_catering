@@ -128,11 +128,56 @@
     footer p {
       margin: 10px 0 0;
     }
-   
+    .navbar {
+      background-color: #132945; /* Dark background */
+      padding: 1.5rem 0;
+      position: sticky; /* Make the navbar sticky */
+      top: 0; /* Stick it to the top */
+      z-index: 1000; /* Ensure it stays above other content */
+  }
+  
+    .navbar-brand, .nav-link {
+        color: white!important; /* White text */
+        font-size: 1.2rem; 
+    }
+    .nav-link:hover {
+        color: #49b200 !important; /* Yellow text on hover */
+    }  
+    /* Active link color */
+.nav-item.active .nav-link {
+  color: #49b200 !important; /* Green color for active link */
+}
+
   </style>
 
 </head>
-
+<nav class="navbar navbar-expand-lg">
+  <div class="container">
+      <!-- <a class="navbar-brand" href="#">Your Brand</a> -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                  <a class="nav-link" href="index.html">Home</a>
+              </li>
+              <li class="nav-item active">
+                  <a class="nav-link" href="about.html">About</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="beauty.html">Beautician</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="Event_management.html">Event Management</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="Photography.html">Photography</a>
+            </li>
+          </ul>
+      </div>
+  </div>
+</nav>
 <body>
 
   <!-- About Section -->
@@ -173,108 +218,25 @@
       </div>
     </div>
   </section><!-- /About Section -->
-
-  <footer></footer>
+  <footer>
     <div class="container">
       <div class="row">
         <div class="col-md-12 text-center">
           <ul class="social-links">
-            <a href="index.html" class="footer-home-icon">
-              <i class="fas fa-home"></i> 
-            </a>
-            <li><a href="about.html"><i class="fas fa-info-circle"></i></a></li>
             <li><a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a></li>
-            <li><a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a></li>          
+            <li><a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a></li>
             <li><a href="https://wa.me/1234567890" target="_blank"><i class="fab fa-whatsapp"></i></a></li>
             <li><a href="terms-and-conditions.html"><i class="fas fa-file-contract"></i></a></li>
             <li class="list-inline-item"><a class="footer-icon" href="#" id="share-btn" title="Share This Page"><i
-              class="fas fa-share-alt"></i></a></li>
+                  class="fas fa-share-alt"></i></a></li>
           </ul>
         </div>
       </div>
       <div class="text-center">
-        <p>&copy; 2024 Your Company. All Rights Reserved.</p>
+        <p>&copy; 2024 Godfather. All Rights Reserved.</p>
       </div>
     </div>
   </footer>
-  <script>
-
-    // Function to update the cart display in the navbar
-    function updateCartDisplay(cart) {
-      // Get the number of items in the cart
-      const itemCount = Object.keys(cart).length;
-      // Update the cart count badge
-      document.getElementById('cart-count').textContent = itemCount;
-    }
-
-    // Function to handle 'Add to Cart' button clicks
-    function addToCart(event) {
-      const button = event.target;
-      const itemName = button.getAttribute('data-name');
-
-      // Get the cart from localStorage
-      let cart = JSON.parse(localStorage.getItem('cart')) || {};
-
-      // Check if the item is already in the cart by name
-      const itemInCart = Object.values(cart).find(item => item.name === itemName);
-
-      if (itemInCart) {
-        // If the item is found in the cart, show a message
-        alert(`${itemName} is already in the cart!`);
-      } else {
-        // If the item is not found, add a new item with a quantity of 1
-        const itemId = Date.now(); // Generate a unique ID based on current time
-        cart[itemId] = {
-          name: itemName,
-          quantity: 1
-        };
-
-        // Save the updated cart to localStorage
-        localStorage.setItem('cart', JSON.stringify(cart));
-
-        // Update the cart display in the navbar
-        updateCartDisplay(cart);
-
-        // Display a message indicating the item has been added
-        alert(`${itemName} added to cart!`);
-      }
-    }
-
-    // Initialize the cart from localStorage on page load
-    function initializeCart() {
-      let cart = JSON.parse(localStorage.getItem('cart')) || {};
-      updateCartDisplay(cart);
-    }
-
-    // Attach click event listeners to all 'Add to Cart' buttons
-    document.addEventListener('DOMContentLoaded', () => {
-      initializeCart();
-      document.querySelectorAll('.add-to-cart-btn').forEach(button => {
-        button.addEventListener('click', addToCart);
-      });
-    });
-
-  </script>
-
-  <script>
-    // JavaScript for Sharing Functionality
-    document.getElementById('share-btn').addEventListener('click', function (event) {
-      event.preventDefault();
-      if (navigator.share) {
-        navigator.share({
-          title: document.title,
-          text: 'Check out this page:',
-          url: window.location.href
-        }).then(() => {
-          console.log('Thanks for sharing!');
-        }).catch((error) => {
-          console.error('Error sharing:', error);
-        });
-      } else {
-        alert('Your browser does not support the Share API.');
-      }
-    });
-  </script>
   <!-- JavaScript -->
   <!-- Bootstrap JavaScript Bundle (includes Popper) -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>

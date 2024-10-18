@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GODFATHER</title>
+    <link href="assets/img/favicon.png" rel="icon">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        p {
+            font-size: medium;
+        }
+
+        /* Hero Section */
+        .hero-wrap {
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            position: relative;
+            width: 100%;
+            height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-wrap .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+
+        .hero-wrap .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Service Section */
+        .ftco-section {
+            padding: 50px 0;
+            padding-bottom: 100px;
+            background-color: white;
+        }
+
+        .service-section {
+            margin-bottom: 30px;
+        }
+
+        .service-section h5 {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .service-section img {
+            max-width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            transition: transform 0.3s ease;
+        }
+
+        .service-section img:hover {
+            transform: scale(1.1);
+        }
+
+        .service-section p {
+            max-width: 400px;
+            line-height: 1.5;
+        }
+
+        .row img {
+            margin-right: 20px;
+        }
+
+        .col-md-6.service-section {
+            color: black;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #f8f9fa;
+            padding: 20px 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .social-links {
+            list-style: none;
+            padding: 0;
+        }
+
+        .social-links li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        .social-links a {
+            color: #333;
+            text-decoration: none;
+            font-size: 24px;
+        }
+
+        .social-links a:hover {
+            color: #49b200;
+        }
+
+        .navbar {
+            background-color: #132945;
+            padding: 1.5rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar-brand,
+        .nav-link {
+            color: white !important;
+            font-size: 1.2rem;
+        }
+
+        .nav-link:hover {
+            color: #49b200 !important;
+        }
+
+        .nav-item.active .nav-link {
+            color: #49b200 !important;
+        }
+
+        /* Wedding Section */
+        .wedding-section {
+            display: flex;
+            align-items: center;
+            padding: 40px 0;
+        }
+
+        .img-slide {
+            width: 100%;
+            opacity: 0;
+            transform: translateX(-100px);
+            transition: transform 1.5s ease-out, opacity 1.5s ease-out;
+        }
+
+        .highlight {
+            color: #49b200;
+            font-size: 2rem;
+        }
+
+        p {
+            font-size: 1.1rem;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .btn-circle {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            border: 2px solid #49b200;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 45px;
+            color: #49b200;
+            margin-top: 20px;
+        }
+
+        .btn-circle:hover {
+            background-color: #49b200;
+            color: white;
+            transition: background-color 0.3s;
+        }
+
+        .circle-arrow {
+            font-size: 24px;
+        }
+
+        body.loaded .img-slide {
+            transform: translateX(0);
+            opacity: 1;
+        }
+
+        /* Events Section */
+        .events-section {
+            background-color: #f8f9fa;
+            padding: 50px 0;
+        }
+
+        .event-card {
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+
+        .event-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .event-card img {
+            width: 100%;
+            height: auto;
+        }
+
+        .event-card-body {
+            padding: 15px;
+        }
+
+        .event-card-title {
+            font-size: 1.5rem;
+            color: #333;
+        }
+
+        .event-card-text {
+            color: #666;
+        }
+
+        /* Scroll-triggered animation using IntersectionObserver */
+        .animate-slide {
+            opacity: 0;
+            transform: translateX(-100px);
+            transition: transform 1.5s ease-out, opacity 1.5s ease-out;
+        }
+
+        .in-view {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+    </style>
+</head>
+
+<nav class="navbar navbar-expand-lg">
+    <div class="container">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="beauty.html">Beautician</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="Event_management.html">Event Management</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Photography.html">Photography</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<body>
+    <section class="ftco-section" style="padding-bottom: 0px;">
+        <div class="container">
+            <div class="row justify-content-center mb-5">
+                <div class="col-md-7 text-center heading-section ftco-animate">
+                    <h3 class="subheading" style="color:blue;"><b>Our Services</b></h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Event Management Sections -->
+    <section class="event-management">
+        <div class="container">
+            
+            <!-- Corporate & Conferences -->
+            <div class="wedding-section">
+                <div class="row">
+                    <div class="col-md-6">
+                        <img src="images/corporate.jpg" alt="Corporate Event" class="img-slide">
+                    </div>
+                    <div class="col-md-6">
+                        <h2>Corporate & Conferences</h2>
+                        <p>
+                            <span class="highlight">G</span>odfather focuses on brand management and brings brands to life with events. The team places a special focus on breaking boundaries for their corporate clients. Godfather’s creativity highlights the company mission while delivering a fantastic event experience.
+                        </p>
+                        <a href="#" class="btn-circle">
+                            <span class="circle-arrow">&#8250;</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Destination Weddings -->
+            <div class="wedding-section">
+                <div class="row">
+                    <div class="col-md-6 order-md-2">
+                        <img src="images/Destination Weddings.jpg" alt="Destination Weddings" class="img-slide">
+                    </div>
+                    <div class="col-md-6 order-md-1">
+                        <h2>Destination Weddings</h2>
+                        <p>
+                            <span class="highlight">A</span>s part of our destination wedding and event services we are pleased to feature a collection of remarkable resorts and venues across Kerala, including the backwaters of Kumarakom, Alappuzha, and Kollam. We have had the pleasure of creating amazing events in these locations, including some of the best destination weddings in the industry.
+                        </p>
+                        <a href="#" class="btn-circle">
+                            <span class="circle-arrow">&#8250;</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Brand Promotions -->
+            <div class="wedding-section">
+                <div class="row">
+                    <div class="col-md-6">
+                        <img src="images/BrandPromotion.jpg" alt="Brand Promotion" class="img-slide">
+                    </div>
+                    <div class="col-md-6">
+                        <h2>Brand Promotions</h2>
+                        <p>
+                            <span class="highlight">B</span>rand promotion is a significant part of our corporate venture. We help our clients stand out in the crowd by organizing target-oriented functions. From stage shows, fashion shows, and music concerts to conferences and seminars, we deeply understand client needs and work to create impactful promotional events.
+                        </p>
+                        <a href="#" class="btn-circle">
+                            <span class="circle-arrow">&#8250;</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Product Launches -->
+            <div class="wedding-section">
+                <div class="row">
+                    <div class="col-md-6 order-md-2">
+                        <img src="images/product-launch.jpg" alt="Product Launch" class="img-slide">
+                    </div>
+                    <div class="col-md-6 order-md-1">
+                        <h2>Product Launches</h2>
+                        <p>
+                            <span class="highlight">P</span>roduct launch events are a key marketing tool for introducing products into the market. We understand the importance of a strong introduction and work on every aspect of the event to ensure that products get the attention they deserve. From venue planning to timing and marketing strategies, we deliver impactful product launches.
+                        </p>
+                        <a href="#" class="btn-circle">
+                            <span class="circle-arrow">&#8250;</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+    
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const imgSlides = document.querySelectorAll('.img-slide');
+
+            const options = {
+                root: null, // viewport
+                threshold: 0.1, // trigger when 10% of the element is visible
+            };
+
+            const observer = new IntersectionObserver(function (entries, observer) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('in-view');
+                        observer.unobserve(entry.target); // Stop observing once the animation is triggered
+                    }
+                });
+            }, options);
+
+            imgSlides.forEach(image => {
+                observer.observe(image);
+            });
+        });
+    </script>
+
+    <footer>
+        <div class="container text-center">
+            <ul class="social-links">
+                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>

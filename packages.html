@@ -47,7 +47,7 @@
       z-index: 2;
     }
 
-    
+
     /* Existing Card Styles */
     .card.custom-card {
       border: 2px solid black;
@@ -167,7 +167,7 @@
       /* Optional: background color for visibility */
     }
 
-    
+
     .add-to-cart-btn {
       background-color: #49b200;
       /* A vibrant color for the button */
@@ -205,7 +205,7 @@
       /* Slightly shrink button on click */
     }
 
-    
+
     footer {
       background-color: #f8f9fa;
       padding: 20px 0;
@@ -231,7 +231,7 @@
     }
 
     .social-links a:hover {
-      color: #49b200 ;
+      color: #49b200;
       /* Change this to your desired hover color */
     }
 
@@ -280,9 +280,64 @@
       border-radius: 50%;
       padding: 2px 6px;
     }
-  </style>
-</head>
 
+    .navbar {
+      background-color: #132945; /* Dark background */
+      padding: 1.5rem 0;
+      position: sticky; /* Make the navbar sticky */
+      top: 0; /* Stick it to the top */
+      z-index: 1000; /* Ensure it stays above other content */
+  }
+  
+    .navbar-brand, .nav-link {
+        color: white!important; /* White text */
+        font-size: 1.2rem; 
+    }
+    .nav-link:hover {
+        color: #49b200 !important; /* Yellow text on hover */
+    } 
+    /* Active link color */
+.nav-item.active .nav-link {
+  color: #49b200 !important; /* Green color for active link */
+}
+
+  </style>
+  
+  <!-- Add this in the <head> section -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Include Bootstrap JS before closing </body> -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  
+</head>
+<nav class="navbar navbar-expand-lg">
+  <div class="container">
+      <!-- <a class="navbar-brand" href="#">Your Brand</a> -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                  <a class="nav-link" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="about.html">About</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="beauty.html">Beautician</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="Event_management.html">Event Management</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="Photography.html">Photography</a>
+            </li>
+          </ul>
+      </div>
+  </div>
+</nav>
 <body>
   <!-- Header Section -->
   <a href="cart.html" class="cart-icon-fixed" title="View Cart">
@@ -319,7 +374,8 @@
             style="background:#fff; border: none; box-shadow: rgba(247, 235, 1, 0.2) 0px 7px 29px 0px;">
             <div class="card-body">
               <div class="icon-container">
-                <img src="images/cart/Menu-1.webp" alt="Icon" class="icon-image">
+                <img src="images/cart/pexels-flowerstofox-4043324.jpg" alt="Flower" class="icon-image">
+
               </div>
               <h5 class="card-title mt-3">Menu 1</h5><br>
               <p class="card-text">
@@ -330,7 +386,7 @@
                   Halwa/<br>Gulab Jamun/(Any One)</span>
                 <button class="read-more-btn" onclick="toggleReadMore(this)">Read more</button>
               </p>
-              <button class="add-to-cart-btn" data-id="1" data-name="Menu-1">Add to Cart</button>
+              <button class="add-to-cart-btn" data-id="1" data-name="pexels-flowerstofox-4043324">Add to Cart</button>
 
 
             </div>
@@ -398,6 +454,7 @@
                   Halwa/<br>Gulab Jamun/(Any One) with Ice Cream</span>
                 <button class="read-more-btn" onclick="toggleReadMore(this)">Read more</button>
               </p>
+              
               <button class="add-to-cart-btn" data-id="4" data-name="Menu-4">Add to Cart</button>
             </div>
           </div>
@@ -405,79 +462,68 @@
       </div>
     </div>
   </section>
-
   <footer>
     <div class="container">
       <div class="row">
         <div class="col-md-12 text-center">
           <ul class="social-links">
-            <a href="index.html" class="footer-home-icon">
-              <i class="fas fa-home"></i> 
-            </a>
-            <li><a href="about.html"><i class="fas fa-info-circle"></i></a></li>
             <li><a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a></li>
-            <li><a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a></li>          
+            <li><a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a></li>
             <li><a href="https://wa.me/1234567890" target="_blank"><i class="fab fa-whatsapp"></i></a></li>
             <li><a href="terms-and-conditions.html"><i class="fas fa-file-contract"></i></a></li>
             <li class="list-inline-item"><a class="footer-icon" href="#" id="share-btn" title="Share This Page"><i
-              class="fas fa-share-alt"></i></a></li>
+                  class="fas fa-share-alt"></i></a></li>
           </ul>
         </div>
       </div>
       <div class="text-center">
-        <p>&copy; 2024 Your Company. All Rights Reserved.</p>
+        <p>&copy; 2024 Godfather. All Rights Reserved.</p>
       </div>
     </div>
   </footer>
   <script>
-
     // Function to update the cart display in the navbar
     function updateCartDisplay(cart) {
-      // Get the number of items in the cart
       const itemCount = Object.keys(cart).length;
-      // Update the cart count badge
       document.getElementById('cart-count').textContent = itemCount;
     }
-
-    // Function to handle 'Add to Cart' button clicks
+  
     function addToCart(event) {
       const button = event.target;
       const itemName = button.getAttribute('data-name');
-
-      // Get the cart from localStorage
+      const itemImage = button.getAttribute('data-image'); // Ensure you have this attribute
+    
       let cart = JSON.parse(localStorage.getItem('cart')) || {};
-
-      // Check if the item is already in the cart by name
-      const itemInCart = Object.values(cart).find(item => item.name === itemName);
-
-      if (itemInCart) {
-        // If the item is found in the cart, show a message
-        alert(`${itemName} is already in the cart!`);
-      } else {
-        // If the item is not found, add a new item with a quantity of 1
-        const itemId = Date.now(); // Generate a unique ID based on current time
+      const itemId = Date.now();
+    
+      // Prompt user for a note
+      const note = prompt(`Add a note for ${itemName}:`);
+    
+      // Check if the user clicked "Cancel"
+      if (note !== null) {
+        // User added a note
         cart[itemId] = {
           name: itemName,
-          quantity: 1
+          image: itemImage,
+          quantity: 1,
+          note: note // Store the note
         };
-
-        // Save the updated cart to localStorage
-        localStorage.setItem('cart', JSON.stringify(cart));
-
-        // Update the cart display in the navbar
-        updateCartDisplay(cart);
-
-        // Display a message indicating the item has been added
-        alert(`${itemName} added to cart!`);
-      }
+        
+        // Alert message includes the note
+        alert(`${itemName} added to cart!${note ? ' Note: ' + note : ''}`);
+      } 
+    
+      localStorage.setItem('cart', JSON.stringify(cart));
+      updateCartDisplay(cart);
     }
-
+    
+  
     // Initialize the cart from localStorage on page load
     function initializeCart() {
       let cart = JSON.parse(localStorage.getItem('cart')) || {};
       updateCartDisplay(cart);
     }
-
+  
     // Attach click event listeners to all 'Add to Cart' buttons
     document.addEventListener('DOMContentLoaded', () => {
       initializeCart();
@@ -485,39 +531,9 @@
         button.addEventListener('click', addToCart);
       });
     });
-
   </script>
-
-  <script>
-    // JavaScript for Sharing Functionality
-    document.getElementById('share-btn').addEventListener('click', function (event) {
-      event.preventDefault();
-      if (navigator.share) {
-        navigator.share({
-          title: document.title,
-          text: 'Check out this page:',
-          url: window.location.href
-        }).then(() => {
-          console.log('Thanks for sharing!');
-        }).catch((error) => {
-          console.error('Error sharing:', error);
-        });
-      } else {
-        alert('Your browser does not support the Share API.');
-      }
-    });
-  </script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script>
-    function toggleReadMore(button) {
-      const content = button.previousElementSibling;
-      const isVisible = content.style.display === 'inline';
-      content.style.display = isVisible ? 'none' : 'inline';
-      button.textContent = isVisible ? 'Read more' : 'Read less';
-    }
-  </script>
-
   
+
 </body>
 
 </html>
